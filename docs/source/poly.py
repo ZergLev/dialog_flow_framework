@@ -28,9 +28,9 @@ MOCK_DATA = {
     "revisions": [
         GitRef("dev", "", "", GitRefType.BRANCH, datetime.fromtimestamp(1)),
         GitRef("master", "", "", GitRefType.BRANCH, datetime.fromtimestamp(2)),
-        GitRef("test_branch", "", "", GitRefType.BRANCH, datetime.fromtimestamp(2)),
+        GitRef("test_branch", "", "", GitRefType.BRANCH, datetime.fromtimestamp(3)),
     ],
-    "current": GitRef("local", "", "", GitRefType.BRANCH, datetime.fromtimestamp(3)),
+    "current": GitRef("local", "", "", GitRefType.BRANCH, datetime.fromtimestamp(4)),
 }
 MOCK = False
 
