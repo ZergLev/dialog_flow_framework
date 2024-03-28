@@ -6,7 +6,7 @@ from sphinx_polyversion.pyvenv import Poetry
 from sphinx_polyversion.sphinx import SphinxBuilder
 
 #: Regex matching the branches to build docs for
-BRANCH_REGEX = r"(dev|master|test_branch)"
+BRANCH_REGEX = r"(dev|master|test_branch|test_branch_2)"
 
 #: Regex matching the tags to build docs for
 TAG_REGEX = r"-"
