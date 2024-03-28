@@ -10,8 +10,13 @@ from utils.notebook import py_percent_to_notebook  # noqa: E402
 from utils.generate_tutorials import generate_tutorial_links_for_notebook_creation  # noqa: E402
 from utils.link_misc_files import link_misc_files  # noqa: E402
 from utils.regenerate_apiref import regenerate_apiref  # noqa: E402
+from sphinx_polyversion.api import load
 
 # -- Project information -----------------------------------------------------
+
+load(globals())
+
+html_context["latest"] = max(html_context["revisions"]) # latest by date
 
 _distribution_metadata = importlib.metadata.metadata('dff')
 
