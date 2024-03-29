@@ -117,8 +117,26 @@ html_css_files = [
     "css/custom.css",
 ]
 
+
+# VERSIONING
+# Define the json_url for our version switcher.
+json_url = "file:///home/sergey/DialogFlowFramework/SphinxMultiversioning/dialog_flow_framework/docs/source/_static/switcher.json"
+
+# Define the version we use for matching in the version switcher.
+version_match = os.environ.get("READTHEDOCS_VERSION")
+# If READTHEDOCS_VERSION doesn't exist, we're not on RTD
+# If it is an integer, we're in a PR build and the version isn't correct.
+if not version_match or version_match.isdigit():
+    # For local development, infer the version to match from the package.
+    if "dev" in version:
+        version_match = "latest"
+        # We want to keep the relative reference if we are in dev mode
+        # but we want the whole url if we are effectively in a released version
+        json_url = "/_static/switcher.json"
+    else:
+        version_match = "v" + version
+
 # Theme options
-version = pydata_sphinx_theme.__version__
 html_theme_options = {
     "header_links_before_dropdown": 5,
     "logo": {
@@ -147,8 +165,8 @@ html_theme_options = {
     ],
     "secondary_sidebar_items": ["page-toc", "source-links", "example-links"],
     "switcher": {
-        "json_url": "/_static/switcher.json",
-        "version_match": f"v{version}",
+        "json_url": json_url,
+        "version_match": version_match,
     },
     "navbar_start": ["navbar-logo", "version-switcher"],
 }
