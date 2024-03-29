@@ -6,7 +6,7 @@ from sphinx_polyversion.pyvenv import Poetry
 from sphinx_polyversion.sphinx import SphinxBuilder
 
 #: Regex matching the branches to build docs for
-BRANCH_REGEX = r"(dev|master|test_branch|test_branch_2)"
+BRANCH_REGEX = r"(dev|master|test_branch|test_branch_2|feat/sphinx_multiversion)"
 
 #: Regex matching the tags to build docs for
 TAG_REGEX = r"-"
@@ -29,8 +29,10 @@ MOCK_DATA = {
         GitRef("dev", "", "", GitRefType.BRANCH, datetime.fromtimestamp(1)),
         GitRef("master", "", "", GitRefType.BRANCH, datetime.fromtimestamp(2)),
         GitRef("test_branch", "", "", GitRefType.BRANCH, datetime.fromtimestamp(3)),
+        GitRef("test_branch_2", "", "", GitRefType.BRANCH, datetime.fromtimestamp(4)),
+        GitRef("feat/sphinx_multiversion", "", "", GitRefType.BRANCH, datetime.fromtimestamp(5)),
     ],
-    "current": GitRef("local", "", "", GitRefType.BRANCH, datetime.fromtimestamp(4)),
+    "current": GitRef("local", "", "", GitRefType.BRANCH, datetime.fromtimestamp(6)),
 }
 MOCK = False
 

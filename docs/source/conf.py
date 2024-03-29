@@ -117,6 +117,7 @@ html_css_files = [
 ]
 
 # Theme options
+version = my_package_name.__version__.replace("dev0", "")  # may differ
 html_theme_options = {
     "header_links_before_dropdown": 5,
     "logo": {
@@ -144,6 +145,11 @@ html_theme_options = {
         },
     ],
     "secondary_sidebar_items": ["page-toc", "source-links", "example-links"],
+    "switcher": {
+        "json_url": "file:///home/sergey/DialogFlowFramework/SphinxMultiversioning/dialog_flow_framework/docs/build/feat/sphinx_multiversion/_static_switcher.json",
+        "version_match": version,
+    },
+    "navbar_start": ["navbar-logo", "version-switcher"],
 }
 
 
