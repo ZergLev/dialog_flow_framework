@@ -118,7 +118,7 @@ html_css_files = [
 ]
 
 # Theme options
-version = pydata_sphinx_theme.__version__.replace("dev0", "")  # may differ
+version = pydata_sphinx_theme.__version__
 html_theme_options = {
     "header_links_before_dropdown": 5,
     "logo": {
@@ -148,7 +148,7 @@ html_theme_options = {
     "secondary_sidebar_items": ["page-toc", "source-links", "example-links"],
     "switcher": {
         "json_url": "/home/sergey/DialogFlowFramework/SphinxMultiversioning/dialog_flow_framework/docs/build/test_branch/_static/switcher.json",
-        "version_match": version,
+        "version_match": f"v{version}",
     },
     "navbar_start": ["navbar-logo", "version-switcher"],
 }
