@@ -117,7 +117,7 @@ html_css_files = [
 ]
 
 # Theme options
-version = project.__version__.replace("dev0", "")  # may differ
+version = dff.__version__.replace("dev0", "")  # may differ
 html_theme_options = {
     "header_links_before_dropdown": 5,
     "logo": {
