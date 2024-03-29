@@ -147,7 +147,7 @@ html_theme_options = {
     ],
     "secondary_sidebar_items": ["page-toc", "source-links", "example-links"],
     "switcher": {
-        "json_url": "file:///home/sergey/DialogFlowFramework/SphinxMultiversioning/dialog_flow_framework/docs/build/feat/sphinx_multiversion/_static/switcher.json",
+        "json_url": "/home/sergey/DialogFlowFramework/SphinxMultiversioning/dialog_flow_framework/docs/build/test_branch/_static/switcher.json",
         "version_match": version,
     },
     "navbar_start": ["navbar-logo", "version-switcher"],
