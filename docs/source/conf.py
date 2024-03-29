@@ -120,7 +120,7 @@ html_css_files = [
 
 # VERSIONING
 # Define the json_url for our version switcher.
-json_url = "/home/sergey/DialogFlowFramework/SphinxMultiversioning/dialog_flow_framework/docs/source/_static/switcher.json"
+json_url = "./docs/source/_static/switcher.json"
 
 # Define the version we use for matching in the version switcher.
 version_match = os.environ.get("READTHEDOCS_VERSION")
