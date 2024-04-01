@@ -120,7 +120,8 @@ html_css_files = [
 
 # VERSIONING
 # Define the json_url for our version switcher.
-json_url = "docs/source/_static/switcher.json"
+json_url = "https://raw.githubusercontent.com/ZergLev/dialog_flow_framework/sphinx_multiversion_test/docs/source/_static/switcher.json"
+# json_url = "docs/source/_static/switcher.json"
 # json_url = "/docs/source/_static/switcher.json"
 # json_url = "https://www.wikipedia.org/"
 
