@@ -120,7 +120,7 @@ html_css_files = [
 
 # VERSIONING
 # Define the json_url for our version switcher.
-json_url = "./docs/source/_static/switcher.json"
+json_url = "/docs/source/_static/switcher.json"
 # json_url = "https://www.wikipedia.org/"
 
 # Theme options
@@ -157,7 +157,7 @@ html_theme_options = {
     },
     "navbar_start": ["navbar-logo", "version-switcher"],
 }
-
+print(version)
 
 favicons = [
     {"href": "images/logo-dff.svg"},
