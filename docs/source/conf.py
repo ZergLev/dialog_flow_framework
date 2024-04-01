@@ -13,7 +13,7 @@ from utils.link_misc_files import link_misc_files  # noqa: E402
 from utils.regenerate_apiref import regenerate_apiref  # noqa: E402
 from sphinx_polyversion import load
 from sphinx_polyversion.git import GitRef
-
+from dff import __version__
 # -- Project information -----------------------------------------------------
 
 data = load(globals())  # adds variables `current` and `revisions`
@@ -153,7 +153,7 @@ html_theme_options = {
     "secondary_sidebar_items": ["page-toc", "source-links", "example-links"],
     "switcher": {
         "json_url": json_url,
-        "version_match": version_match,
+        "version_match": __version__,
     },
     "navbar_start": ["navbar-logo", "version-switcher"],
 }
