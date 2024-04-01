@@ -120,7 +120,8 @@ html_css_files = [
 
 # VERSIONING
 # Define the json_url for our version switcher.
-json_url = "/docs/source/_static/switcher.json"
+json_url = "file:///home/sergey/DialogFlowFramework/SphinxMultiversioning/dialog_flow_framework/docs/build/test_branch/index.html"
+# json_url = "/docs/source/_static/switcher.json"
 # json_url = "https://www.wikipedia.org/"
 
 # Theme options
