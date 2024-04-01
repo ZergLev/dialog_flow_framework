@@ -120,21 +120,8 @@ html_css_files = [
 
 # VERSIONING
 # Define the json_url for our version switcher.
-json_url = "./docs/source/_static/switcher.json"
-
-# Define the version we use for matching in the version switcher.
-version_match = os.environ.get("READTHEDOCS_VERSION")
-# If READTHEDOCS_VERSION doesn't exist, we're not on RTD
-# If it is an integer, we're in a PR build and the version isn't correct.
-if not version_match or version_match.isdigit():
-    # For local development, infer the version to match from the package.
-    if "dev" in version:
-        version_match = "latest"
-        # We want to keep the relative reference if we are in dev mode
-        # but we want the whole url if we are effectively in a released version
-        json_url = "./_static/switcher.json"
-    else:
-        version_match = "v" + version
+# json_url = "./docs/source/_static/switcher.json"
+json_url = "https://www.wikipedia.org/"
 
 # Theme options
 html_theme_options = {
