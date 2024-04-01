@@ -159,7 +159,7 @@ html_theme_options = {
     "navbar_start": ["navbar-logo", "version-switcher"],
 }
 print(version)
-
+print(isinstance(version, str))
 favicons = [
     {"href": "images/logo-dff.svg"},
 ]
