@@ -10,7 +10,7 @@
     },
     {
         "version": "test_branch",
-        "url": "file:///home/sergey/DialogFlowFramework/SphinxMultiversioning/dialog_flow_framework/docs/build/test_branch/index.html"
+        "url": "file:///home/sergey/DialogFlowFramework/SphinxMultiversioning/dialog_flow_framework/docs/build/test_branch_test/index.html"
     },
     {
         "version": "test_branch_2",
@@ -22,6 +22,6 @@
     }
     {
         "version": "0.7.0",
-        "url": "file:///home/sergey/DialogFlowFramework/SphinxMultiversioning/dialog_flow_framework/docs/build/feat/sphinx_multiversion/index.html"
+        "url": "file:///home/sergey/DialogFlowFramework/SphinxMultiversioning/dialog_flow_framework/docs/build/test_branch/index.html"
     }
 ]
