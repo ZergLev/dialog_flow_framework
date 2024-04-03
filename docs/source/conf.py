@@ -157,7 +157,8 @@ html_theme_options = {
     "secondary_sidebar_items": ["page-toc", "source-links", "example-links"],
     "switcher": {
         "json_url": json_url,
-        "version_match": version,
+        # "version_match" : version,
+        "version_match": current[0],
     },
     "navbar_start": ["navbar-logo", "version-switcher"],
 }
