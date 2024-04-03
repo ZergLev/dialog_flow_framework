@@ -21,8 +21,7 @@
         "url": "file:///home/sergey/DialogFlowFramework/SphinxMultiversioning/dialog_flow_framework/docs/build/feat/sphinx_multiversion/index.html"
     },
     {
-    	"name": "sphinx_multiversion_test",
-        "version": "0.7.0",
+        "version": "sphinx_multiversion_test",
         "url": "file:///home/sergey/DialogFlowFramework/SphinxMultiversioning/dialog_flow_framework/docs/build/sphinx_multiversion_test/index.html"
     }
 ]
