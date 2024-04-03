@@ -19,7 +19,7 @@ from sphinx_polyversion.git import GitRef
 data = load(globals())  # adds variables `current` and `revisions`
 current: GitRef = data['current']
 print(current)
-print(current["name"])
+print(current[0])
 
 _distribution_metadata = importlib.metadata.metadata('dff')
 
