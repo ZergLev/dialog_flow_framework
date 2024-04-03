@@ -18,8 +18,8 @@ from sphinx_polyversion.git import GitRef
 
 data = load(globals())  # adds variables `current` and `revisions`
 current: GitRef = data['current']
-print(current)
-print(current[0])
+print("current is: ", current)
+print("current[0] is: ", current[0])
 
 _distribution_metadata = importlib.metadata.metadata('dff')
 
@@ -161,8 +161,7 @@ html_theme_options = {
     },
     "navbar_start": ["navbar-logo", "version-switcher"],
 }
-print(version)
-print(isinstance(version, str))
+
 favicons = [
     {"href": "images/logo-dff.svg"},
 ]
