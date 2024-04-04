@@ -49,7 +49,7 @@ vcs_test=Git(
     buffer_size=1 * 10**9,  # 1 GB
     predicate=file_predicate([src]), # exclude refs without source dir
 ),
-print(vcs_test.retrieve(root))
+# print(vcs_test.retrieve(root))
 # Setup driver and run it
 DefaultDriver(
     root,
