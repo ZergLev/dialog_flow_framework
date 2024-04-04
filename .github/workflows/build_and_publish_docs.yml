@@ -45,6 +45,7 @@ jobs:
           TG_API_HASH: ${{ secrets.TG_API_HASH }}
           TG_BOT_USERNAME: ${{ secrets.TG_BOT_USERNAME }}
         run: |
+          ls
           git branch main remotes/origin/main
           git branch
           python -m poetry run poe docs
