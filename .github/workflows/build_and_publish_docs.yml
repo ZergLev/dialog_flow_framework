@@ -26,6 +26,8 @@ jobs:
       - run: |
           git remote show origin
           git fetch origin dev
+          git fetch origin master
+          git branch --all
 
       - name: set up python 3.9
         uses: actions/setup-python@v5
