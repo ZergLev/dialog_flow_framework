@@ -42,6 +42,7 @@ apply_overrides(globals())
 root = Git.root(Path(__file__).parent)
 
 # Debug (Delete before PR!)
+src = Path(SOURCE_DIR)
 vcs_test=Git(
     branch_regex=BRANCH_REGEX,
     tag_regex=TAG_REGEX,
@@ -51,7 +52,6 @@ vcs_test=Git(
 print(vcs_test._get_all_refs(root))
 
 # Setup driver and run it
-src = Path(SOURCE_DIR)
 DefaultDriver(
     root,
     OUTPUT_DIR,
