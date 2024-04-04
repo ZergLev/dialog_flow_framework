@@ -22,11 +22,9 @@ jobs:
     steps:
       - uses: actions/checkout@v4
         with:
-          ref: dev
-          ref: master
-          submodules: true
           fetch-depth: 0
-          persist-credentials: false
+      - run: |
+          git remote show origin
 
       - name: set up python 3.9
         uses: actions/setup-python@v5
