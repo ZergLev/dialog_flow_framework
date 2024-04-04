@@ -22,6 +22,8 @@ jobs:
     steps:
       - uses: actions/checkout@v4
         with:
+          ref: dev
+          ref: master
           submodules: true
           fetch-depth: 0
           persist-credentials: false
