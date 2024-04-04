@@ -41,6 +41,15 @@ apply_overrides(globals())
 # Determine repository root directory
 root = Git.root(Path(__file__).parent)
 
+# Debug (Delete before PR!)
+vcs_test=Git(
+    branch_regex=BRANCH_REGEX,
+    tag_regex=TAG_REGEX,
+    buffer_size=1 * 10**9,  # 1 GB
+    predicate=file_predicate([src]), # exclude refs without source dir
+),
+print(vcs_test._get_all_refs(root))
+
 # Setup driver and run it
 src = Path(SOURCE_DIR)
 DefaultDriver(
