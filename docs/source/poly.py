@@ -26,13 +26,13 @@ SPHINX_ARGS = "-a -v".split()
 #: Mock data used for building local version
 MOCK_DATA = {
     "revisions": [
-        GitRef("dev", "", "", GitRefType.BRANCH, datetime.fromtimestamp(1)),
-        GitRef("master", "", "", GitRefType.BRANCH, datetime.fromtimestamp(2)),
-        GitRef("test_branch", "", "", GitRefType.BRANCH, datetime.fromtimestamp(3)),
-        GitRef("test_branch_2", "", "", GitRefType.BRANCH, datetime.fromtimestamp(4)),
-        GitRef("feat/sphinx_multiversion", "", "", GitRefType.BRANCH, datetime.fromtimestamp(5)),
+        GitRef("dev", "", "", GitRefType.BRANCH, datetime.fromtimestamp(0)),
+        GitRef("master", "", "", GitRefType.BRANCH, datetime.fromtimestamp(1)),
+        GitRef("test_branch", "", "", GitRefType.BRANCH, datetime.fromtimestamp(2)),
+        GitRef("test_branch_2", "", "", GitRefType.BRANCH, datetime.fromtimestamp(3)),
+        GitRef("feat/sphinx_multiversion", "", "", GitRefType.BRANCH, datetime.fromtimestamp(4)),
     ],
-    "current": GitRef("local", "", "", GitRefType.BRANCH, datetime.fromtimestamp(6)),
+    "current": GitRef("local", "", "", GitRefType.BRANCH, datetime.fromtimestamp(5)),
 }
 MOCK = False
 
