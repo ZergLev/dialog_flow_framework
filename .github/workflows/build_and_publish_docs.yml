@@ -44,6 +44,8 @@ jobs:
           TG_BOT_USERNAME: ${{ secrets.TG_BOT_USERNAME }}
         run: |
           python -m poetry run poe docs
+        with:
+          branches: [ master, dev ]
 
       - name: remove jekyll theming
         run: touch docs/build/.nojekyll
