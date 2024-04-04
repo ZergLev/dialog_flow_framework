@@ -22,7 +22,9 @@ jobs:
     steps:
       - uses: actions/checkout@v4
         with:
+          submodules: true
           fetch-depth: 0
+          persist-credentials: false
       - run: |
           git branch master remotes/origin/master
 
