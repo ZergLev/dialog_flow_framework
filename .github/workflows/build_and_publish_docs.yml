@@ -25,8 +25,8 @@ jobs:
           fetch-depth: 0
       - run: |
           git remote show origin
-          git fetch origin dev
-          git fetch origin master
+          git pull origin dev
+          git pull origin master
           git branch --all
 
       - name: set up python 3.9
