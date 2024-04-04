@@ -23,7 +23,7 @@ jobs:
       - uses: actions/checkout@v4
         with:
           fetch-depth: 0
-        run: |
+      - run: |
           git branch main remotes/origin/main
 
       - name: set up python 3.9
