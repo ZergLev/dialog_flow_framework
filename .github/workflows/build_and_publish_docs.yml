@@ -23,6 +23,8 @@ jobs:
       - uses: actions/checkout@v4
         with:
           fetch-depth: 0
+        run: |
+          git branch main remotes/origin/main
 
       - name: set up python 3.9
         uses: actions/setup-python@v5
@@ -46,7 +48,6 @@ jobs:
           TG_BOT_USERNAME: ${{ secrets.TG_BOT_USERNAME }}
         run: |
           ls
-          git branch main remotes/origin/main
           git branch
           python -m poetry run poe docs
         
