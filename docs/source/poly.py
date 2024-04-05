@@ -21,7 +21,7 @@ SOURCE_DIR = "docs/source"
 POETRY_ARGS = "--with tutorials,docs --all-extras --no-ansi --no-interaction".split()
 
 #: Arguments to pass to `sphinx-build`
-SPHINX_ARGS = "-a -v".split()
+SPHINX_ARGS = "-b html -W --keep-going -v".split()
 
 #: Mock data used for building local version
 MOCK_DATA = {
