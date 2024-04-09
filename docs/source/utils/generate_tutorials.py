@@ -155,7 +155,7 @@ def generate_tutorial_links_for_notebook_creation(
         else:
             flattened += [f"{package[0]}.{subpackage[0]}" for subpackage in package[2]]
 
-    links = iterate_tutorials_dir_generating_links(Path(source), dest, source)
+    links = iterate_tutorials_dir_generating_links(Path(source), dest, destination)
     filtered_links = list()
     for link in links:
         link_included = len(list(flat for flat in flattened if link.name.startswith(flat))) > 0
