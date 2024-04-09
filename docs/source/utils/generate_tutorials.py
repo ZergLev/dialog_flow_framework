@@ -118,7 +118,7 @@ def iterate_tutorials_dir_generating_links(source: Path, dest: Path, base: str) 
             print(dest / str(base_path))
             print(Path(dest / str(base_path)))
             dest_path = f"{base}"
-            create_notebook_link(entity, base_name)
+            create_notebook_link(entity, Path(base_name))
             links += [base_path]
         elif entity.is_dir() and not entity.name.startswith("_"):
             links += iterate_tutorials_dir_generating_links(entity, dest, base_name)
