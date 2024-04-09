@@ -16,7 +16,8 @@ def create_notebook_link(source: Path, destination: Path):
     # destination.symlink_to(source.resolve(), False)
     print("source = ", source.resolve())
     print("destination = ", destination)
-    copy(source.resolve(), Path('./folder/'))
+    result = copy(source.resolve(), Path('./folder/'))
+    print(result)
     # Changing this into a create_notebook_copy, cause version-dependent source
     # files get deleted along with a temp directory during polyversion docs build.
 
