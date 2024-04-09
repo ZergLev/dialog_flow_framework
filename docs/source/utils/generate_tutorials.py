@@ -127,6 +127,7 @@ def generate_tutorial_links_for_notebook_creation(
     include = [("tutorials", "Tutorials")] if include is None else include
     exclude = list() if exclude is None else exclude
     dest = Path(destination)
+    print("dest =", destination)
 
     flattened = list()
     for package in include:
