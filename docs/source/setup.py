@@ -37,7 +37,7 @@ def setup(root_dir: str, output_dir: str):
             ("tutorials.utils", "Utils"),
             ("tutorials.stats", "Stats"),
         ],
-        # source=root_dir + "/tutorials",
+        source=root_dir + "/tutorials",
         destination=root_dir + "/docs/source/tutorials",
     )
     print(root_dir + "/tutorials")
