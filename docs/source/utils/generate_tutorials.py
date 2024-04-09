@@ -97,9 +97,12 @@ def iterate_tutorials_dir_generating_links(source: Path, dest: Path, base: str) 
         raise Exception(f"Entity {source} appeared to be a file during processing!")
     links = list()
     for entity in [obj for obj in sort_tutorial_file_tree(set(source.glob("./*"))) if not obj.name.startswith("__")]:
+        print(entity, "||", f"{base}")
         base_name = f"{base}.{entity.name}"
+        print("base_name = ", base_name)
         if entity.is_file() and entity.suffix in (".py", ".ipynb"):
             base_path = Path(base_name)
+            print("base_path = ", base_path)
             create_notebook_link(entity, dest / base_path)
             links += [base_path]
         elif entity.is_dir() and not entity.name.startswith("_"):
