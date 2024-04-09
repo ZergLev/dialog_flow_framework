@@ -2,14 +2,18 @@ from docs.source.utils.notebook import py_percent_to_notebook  # noqa: E402
 from docs.source.utils.generate_tutorials import generate_tutorial_links_for_notebook_creation  # noqa: E402
 from docs.source.utils.link_misc_files import link_misc_files  # noqa: E402
 from docs.source.utils.regenerate_apiref import regenerate_apiref  # noqa: E402
+from pathlib import Path
 
-def setup():
+def setup(root_dir: str, output_dir: str):
     print("setup function called")
+    print(root_dir)
     link_misc_files(
         [
             "utils/db_benchmark/benchmark_schema.json",
             "utils/db_benchmark/benchmark_streamlit.py",
-        ]
+        ],
+        root_dir=Path(root_dir),
+        output_dir=Path(output_dir),
     )
     generate_tutorial_links_for_notebook_creation(
         [
@@ -33,8 +37,12 @@ def setup():
             ),
             ("tutorials.utils", "Utils"),
             ("tutorials.stats", "Stats"),
-        ]
+        ],
+        source=root_dir + "/tutorials",
+        destination=root_dir + "/docs/source/tutorials",
     )
+    print(root_dir + "/tutorials")
+    print(root_dir + "/docs/source/tutorials")
     regenerate_apiref(
         [
             ("dff.context_storages", "Context Storages"),

@@ -81,8 +81,9 @@ class DffSphinxBuilder(CommandBuilder):
         output_dir.mkdir(exist_ok=True, parents=True)
 
         # doing DFF funcs before doc building
+        root_dir = environment.path.absolute()
         scripts.doc.dff_funcs(str(source_dir))
-        setup()
+        setup(str(root_dir), str(output_dir))
         print("setup function finished probably")
         # pre hook
         if self.pre_cmd:
