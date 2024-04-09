@@ -1,1 +1,0 @@
-/home/sergey/DialogFlowFramework/new DFF/dialog_flow_framework/tutorials/script/responses/3_media.py
