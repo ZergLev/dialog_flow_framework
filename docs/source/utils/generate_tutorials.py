@@ -13,11 +13,11 @@ def create_notebook_link(source: Path, destination: Path):
     """
     destination.unlink(missing_ok=True)
     destination.parent.mkdir(exist_ok=True, parents=True)
-    # destination.symlink_to(source.resolve(), False)
+    destination.symlink_to(source.resolve(), False)
     print("source = ", source.resolve())
     print("destination = ", destination)
-    result = copy(source.resolve(), destination.resolve())
-    print(result)
+    # result = copy(source.resolve(), destination.resolve())
+    # print(result)
     
     # Changing this into a create_notebook_copy, cause version-dependent source
     # files get deleted along with a temp directory during polyversion docs build.
