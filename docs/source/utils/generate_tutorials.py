@@ -86,18 +86,19 @@ def sort_tutorial_file_tree(files: Set[Path]) -> List[Path]:
 
 def iterate_tutorials_dir_generating_links(source: Path, dest: Path, base: str) -> List[Path]:
     """
-    Recursively travel through tutorials directory, creating links for all files under docs/source/tutorials/ root.
-    Created link files have dot-path name matching source file tree structure.
+    Recursively travel through tutorials directory, creating copies for all files under /tmp_dir/docs/source/tutorials/ root.
+    Created copied files have absolute path name matching source file tree structure.
 
     :param source: Tutorials root (usually tutorials/).
     :param dest: Tutorials destination (usually docs/source/tutorials/).
-    :param base: Dot path to current dir (will be used for link file naming).
+    :param base: Absolute path to current dir (will be used for link file naming).
     """
     if not source.is_dir():
         raise Exception(f"Entity {source} appeared to be a file during processing!")
     links = list()
     for entity in [obj for obj in sort_tutorial_file_tree(set(source.glob("./*"))) if not obj.name.startswith("__")]:
         print(entity, "||", f"{base}")
+        print("My destination would be:", f"{base.parent}.{dest}.{entity.name}")
         base_name = f"{base}.{entity.name}"
         print("source.name = ", f"{source.name}")
         print("base_name = ", base_name)
@@ -122,6 +123,7 @@ def generate_tutorial_links_for_notebook_creation(
     exclude: Optional[List[str]] = None,
     source: str = "tutorials",
     destination: str = "docs/source/tutorials",
+    root_dir: str,
 ):
     """
     Generate symbolic links to tutorials files (tutorials/) in docs directory (docs/source/tutorials/).
@@ -147,7 +149,7 @@ def generate_tutorial_links_for_notebook_creation(
         else:
             flattened += [f"{package[0]}.{subpackage[0]}" for subpackage in package[2]]
 
-    links = iterate_tutorials_dir_generating_links(Path(source), dest, source)
+    links = iterate_tutorials_dir_generating_links(Path(source), dest, root_dir)
     filtered_links = list()
     for link in links:
         link_included = len(list(flat for flat in flattened if link.name.startswith(flat))) > 0
