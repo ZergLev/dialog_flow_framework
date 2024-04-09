@@ -82,7 +82,7 @@ class DffSphinxBuilder(CommandBuilder):
 
         # doing DFF funcs before doc building
         root_dir = environment.path.absolute()
-        scripts.doc.dff_funcs(str(source_dir))
+        scripts.doc.dff_funcs(str(root_dir))
         setup(str(root_dir), str(output_dir))
         print("setup function finished probably")
         # pre hook
