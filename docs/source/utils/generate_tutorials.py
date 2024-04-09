@@ -65,7 +65,7 @@ def create_index_file(
 
     destination.parent.mkdir(exist_ok=True, parents=True)
     destination.write_text(contents)
-    print(destination)
+    print("index file destination = ", destination)
 
 
 def sort_tutorial_file_tree(files: Set[Path]) -> List[Path]:
