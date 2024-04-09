@@ -65,6 +65,7 @@ pygments_style = "default"
 
 add_module_names = False
 
+print("conf.py working directory is: ", os.path.dirname(os.path.realpath(__file__)))
 
 # Add any paths that contain templates here, relative to this directory.
 templates_path = ["_templates"]
