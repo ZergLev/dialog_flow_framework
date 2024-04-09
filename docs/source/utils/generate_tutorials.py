@@ -59,11 +59,11 @@ def create_index_file(
     if len(included) == 2:
         print("included[0] = ", included[0])
         print("possibly better tutorial path would be:", source_dir / included[0])
-        contents += generate_nb_gallery(str(source_dir / included[0]), files)
+        contents += generate_nb_gallery(included[0]), files)
     else:
         for subpackage in included[2]:
             contents += f"\n{subpackage[1]}\n{'-' * len(subpackage[1])}\n"
-            print(f"{str(source_dir)}/{included[0]}.{subpackage[0]}")
+            print(f"{included[0]}.{subpackage[0]}")
             contents += generate_nb_gallery(f"{str(source_dir)}/{included[0]}.{subpackage[0]}", files)
 
     destination.parent.mkdir(exist_ok=True, parents=True)
@@ -155,7 +155,7 @@ def generate_tutorial_links_for_notebook_creation(
         else:
             flattened += [f"{package[0]}.{subpackage[0]}" for subpackage in package[2]]
 
-    links = iterate_tutorials_dir_generating_links(Path(source), dest, destination)
+    links = iterate_tutorials_dir_generating_links(Path(source), dest, source)
     filtered_links = list()
     for link in links:
         link_included = len(list(flat for flat in flattened if link.name.startswith(flat))) > 0
