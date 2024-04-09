@@ -100,6 +100,7 @@ def iterate_tutorials_dir_generating_links(source: Path, dest: Path, base: str) 
             links += [base_path]
         elif entity.is_dir() and not entity.name.startswith("_"):
             links += iterate_tutorials_dir_generating_links(entity, dest, base_name)
+        print(links)
     return links
 
 
