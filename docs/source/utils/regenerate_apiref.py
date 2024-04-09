@@ -45,6 +45,7 @@ def regenerate_apiref(paths: Optional[List[Tuple[str, str]]] = None, destination
     """
     paths = list() if paths is None else paths
     source = Path(root_dir) / "/docs/source" / Path(destination)
+    print("Currently at regenerate apiref")
     print(source)
     doc_containers: Dict[str, Tuple[str, List[Path]]] = dict()
 
