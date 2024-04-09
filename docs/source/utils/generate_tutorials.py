@@ -84,7 +84,7 @@ def sort_tutorial_file_tree(files: Set[Path]) -> List[Path]:
     return sorted(tutorials, key=sort_key) + sorted(files - tutorials)
 
 
-def iterate_tutorials_dir_generating_links(source: Path, dest: Path, base: str, root_dir: str) -> List[Path]:
+def iterate_tutorials_dir_generating_links(source: Path, dest: Path, base: str) -> List[Path]:
     """
     Recursively travel through tutorials directory, creating copies for all files under /tmp_dir/docs/source/tutorials/ root.
     Created copied files have absolute path name matching source file tree structure.
@@ -99,6 +99,7 @@ def iterate_tutorials_dir_generating_links(source: Path, dest: Path, base: str, 
     for entity in [obj for obj in sort_tutorial_file_tree(set(source.glob("./*"))) if not obj.name.startswith("__")]:
         print(entity, "||", f"{base}")
         print("My destination would be:", f"{root_dir}/docs/source/tutorials.{entity.name}")
+        print("My destination would be:", f"{base.parent}.{dest}.{entity.name}")
         print("My destination would be:", f"{base.parent}.{dest}.{entity.name}")
         base_name = f"{base}.{entity.name}"
         print("source.name = ", f"{source.name}")
@@ -150,7 +151,7 @@ def generate_tutorial_links_for_notebook_creation(
         else:
             flattened += [f"{package[0]}.{subpackage[0]}" for subpackage in package[2]]
 
-    links = iterate_tutorials_dir_generating_links(Path(source), dest, root_dir)
+    links = iterate_tutorials_dir_generating_links(Path(source), dest, destination)
     filtered_links = list()
     for link in links:
         link_included = len(list(flat for flat in flattened if link.name.startswith(flat))) > 0
