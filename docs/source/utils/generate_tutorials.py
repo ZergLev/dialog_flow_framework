@@ -103,6 +103,8 @@ def iterate_tutorials_dir_generating_links(source: Path, dest: Path, base: str) 
         if entity.is_file() and entity.suffix in (".py", ".ipynb"):
             base_path = Path(base_name)
             print("base_path = ", base_path)
+            print(dest / base_path)
+            print(Path(dest / base_path))
             create_notebook_link(entity, dest / base_path)
             links += [base_path]
         elif entity.is_dir() and not entity.name.startswith("_"):
