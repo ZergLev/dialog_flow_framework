@@ -104,8 +104,8 @@ def iterate_tutorials_dir_generating_links(source: Path, dest: Path, base: str) 
     links = list()
     for entity in [obj for obj in sort_tutorial_file_tree(set(source.glob("./*"))) if not obj.name.startswith("__")]:
         print(entity, "||", f"{base}")
-        print("My destination would be:", f"{base}.tutorials.{entity.name}")
-        base_name = f"{base}.tutorials.{entity.name}"
+        print("My destination would be:", f"{dest}/tutorials.{entity.name}")
+        base_name = f"{dest}/tutorials.{entity.name}"
         print("source.name = ", f"{source.name}")
         print("base_name = ", base_name)
         if entity.is_file() and entity.suffix in (".py", ".ipynb"):
