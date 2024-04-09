@@ -13,7 +13,6 @@ def setup(root_dir: str, output_dir: str):
             "utils/db_benchmark/benchmark_streamlit.py",
         ],
         root_dir=Path(root_dir),
-        output_dir=Path(output_dir),
     )
     generate_tutorial_links_for_notebook_creation(
         [
