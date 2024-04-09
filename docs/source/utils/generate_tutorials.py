@@ -1,4 +1,5 @@
 from pathlib import Path
+from shutil import copy
 from typing import List, Optional, Set, Union, Tuple
 
 
@@ -12,7 +13,10 @@ def create_notebook_link(source: Path, destination: Path):
     """
     destination.unlink(missing_ok=True)
     destination.parent.mkdir(exist_ok=True, parents=True)
-    destination.symlink_to(source.resolve(), False)
+    # destination.symlink_to(source.resolve(), False)
+    copy(source.resolve(), destination)
+    # Changing this into a create_notebook_copy, cause version-dependent source
+    # files get deleted along with a temp directory during polyversion docs build.
 
 
 def generate_nb_gallery(package: str, files: List[Path]) -> str:
@@ -140,5 +144,6 @@ def generate_tutorial_links_for_notebook_creation(
         if link_included and not link_excluded:
             filtered_links += [link]
 
+    print(include)
     for included in include:
         create_index_file(included, filtered_links, dest / Path(f"index_{included[1].replace(' ', '_').lower()}.rst"))
