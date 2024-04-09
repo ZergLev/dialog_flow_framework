@@ -63,5 +63,5 @@ def docs(docker: Optional[DockerClient]):
         exit(1)
 # Functions to be called from DffSphinxBuilder before build
 def dff_funcs(root_dir: str):
-    apiref_dir = root_dir + "docs/source/apiref"
-    apidoc.main(["-e", "-E", "-f", "-o", apiref_dir, str(root_dir + "dff")])
+    apiref_dir = root_dir + "/docs/source/apiref"
+    apidoc.main(["-e", "-E", "-f", "-o", apiref_dir, str(root_dir + "/dff")])
