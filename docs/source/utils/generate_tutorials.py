@@ -59,11 +59,12 @@ def create_index_file(
     if len(included) == 2:
         print("included[0] = ", included[0])
         print("possibly better tutorial path would be:", source_dir / included[0])
-        contents += generate_nb_gallery(included[0], files)
+        contents += generate_nb_gallery(source_dir / included[0], files)
     else:
         for subpackage in included[2]:
             contents += f"\n{subpackage[1]}\n{'-' * len(subpackage[1])}\n"
-            contents += generate_nb_gallery(f"{included[0]}.{subpackage[0]}", files)
+            print(f"{source_dir}/{included[0]}.{subpackage[0]}")
+            contents += generate_nb_gallery(f"{source_dir}/{included[0]}.{subpackage[0]}", files)
 
     destination.parent.mkdir(exist_ok=True, parents=True)
     destination.write_text(contents)
