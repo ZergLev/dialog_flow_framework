@@ -91,6 +91,7 @@ def iterate_tutorials_dir_generating_links(source: Path, dest: Path, base: str) 
         raise Exception(f"Entity {source} appeared to be a file during processing!")
     links = list()
     for entity in [obj for obj in sort_tutorial_file_tree(set(source.glob("./*"))) if not obj.name.startswith("__")]:
+        print("Hello from generating tutorials")
         print(entity)
         base_name = f"{base}.{entity.name}"
         if entity.is_file() and entity.suffix in (".py", ".ipynb"):
