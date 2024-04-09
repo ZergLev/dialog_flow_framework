@@ -14,6 +14,7 @@ def create_notebook_link(source: Path, destination: Path):
     destination.unlink(missing_ok=True)
     destination.parent.mkdir(exist_ok=True, parents=True)
     # destination.symlink_to(source.resolve(), False)
+    print(source.resolve(), destination)
     copy(source.resolve(), destination)
     # Changing this into a create_notebook_copy, cause version-dependent source
     # files get deleted along with a temp directory during polyversion docs build.
@@ -95,8 +96,6 @@ def iterate_tutorials_dir_generating_links(source: Path, dest: Path, base: str) 
         raise Exception(f"Entity {source} appeared to be a file during processing!")
     links = list()
     for entity in [obj for obj in sort_tutorial_file_tree(set(source.glob("./*"))) if not obj.name.startswith("__")]:
-        print("Hello from generating tutorials")
-        print(entity)
         base_name = f"{base}.{entity.name}"
         if entity.is_file() and entity.suffix in (".py", ".ipynb"):
             base_path = Path(base_name)
@@ -145,5 +144,6 @@ def generate_tutorial_links_for_notebook_creation(
             filtered_links += [link]
 
     print(include)
+    print(filtered_links)
     for included in include:
         create_index_file(included, filtered_links, dest / Path(f"index_{included[1].replace(' ', '_').lower()}.rst"))
