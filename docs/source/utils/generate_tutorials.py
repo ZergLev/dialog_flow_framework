@@ -57,6 +57,8 @@ def create_index_file(
 {"=" * len(title)}
 """
     if len(included) == 2:
+        print("included[0] = ", included[0])
+        print("possibly better tutorial path would be:", destination / included[0])
         contents += generate_nb_gallery(included[0], files)
     else:
         for subpackage in included[2]:
