@@ -16,7 +16,7 @@ from .clean import clean_docs
 from sphinx_polyversion.main import main as poly_main
 
 @docker_client
-def _build_drawio(docker: Optional[DockerClient], drawio_root: Path = "{os.getcwd()}/docs/source/drawio_src/", destination: Path = "{os.getcwd()}/docs/source/_static/drawio/"):
+def _build_drawio(docker: Optional[DockerClient], drawio_root: Path = f"{os.getcwd()}/docs/source/drawio_src/", destination: Path = f"{os.getcwd()}/docs/source/_static/drawio/"):
     if len(docker.image.list("rlespinasse/drawio-export")) == 0:
         docker.image.pull("rlespinasse/drawio-export", quiet=True)
     docker.container.run(
@@ -52,7 +52,6 @@ def docs(docker: Optional[DockerClient]):
         clean_docs()
         dotenv.load_dotenv(".env_file")
         os.environ["DISABLE_INTERACTIVE_MODE"] = "1"
-        _build_drawio(docker)
 	# build_drawio should be called in all revisions and I am not sure how yet
         result = build.make_main(["-M", "clean", "docs/source", "docs/build"])
         poly_path = "docs/source/poly.py"
