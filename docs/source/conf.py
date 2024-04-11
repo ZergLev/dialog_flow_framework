@@ -121,7 +121,7 @@ html_css_files = [
 ]
 
 
-json_url = "https://raw.githubusercontent.com/ZergLev/dialog_flow_framework/master/docs/source/_static/switcher.json"
+json_url = "https://zerglev.github.io/dialog_flow_framework/master/docs/source/_static/switcher.json"
 
 # Theme options
 html_theme_options = {
