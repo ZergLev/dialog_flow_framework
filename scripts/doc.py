@@ -72,6 +72,6 @@ def docs(docker: Optional[DockerClient]):
 def dff_funcs(root_dir: str):
     drawio_root = root_dir + "/docs/source/drawio_src"
     drawio_destination = root_dir + "/docs/source/_static/drawio"
-    _build_drawio(root_dir=root_dir)
+    _build_drawio(_, root_dir=root_dir)
     apiref_dir = root_dir + "/docs/source/apiref"
     apidoc.main(["-e", "-E", "-f", "-o", apiref_dir, "dff"])
