@@ -15,7 +15,7 @@ from .clean import clean_docs
 
 from sphinx_polyversion.main import main as poly_main
 
-def _build_drawio(docker: Optional[DockerClient], root_dir: str):
+def _build_drawio(docker: Optional[DockerClient] = None, root_dir: str):
     drawio_root = root_dir + "/docs/source/drawio_src"
     destination = root_dir + "/docs/source/_static/drawio"
     docker = DockerClient(
