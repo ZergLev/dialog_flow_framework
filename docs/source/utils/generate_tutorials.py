@@ -58,8 +58,9 @@ def create_index_file(
 """
     if len(included) == 2:
         print("included[0] = ", included[0])
+        print("possibly better str tutorial path would be:", f"{str(source_dir)}/{included[0]}")
         print("possibly better tutorial path would be:", source_dir / included[0])
-        contents += generate_nb_gallery((included[0]), files)
+        contents += generate_nb_gallery(f"{str(source_dir)}/{included[0]}", files)
     else:
         for subpackage in included[2]:
             contents += f"\n{subpackage[1]}\n{'-' * len(subpackage[1])}\n"
