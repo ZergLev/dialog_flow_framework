@@ -15,8 +15,13 @@ from .clean import clean_docs
 
 from sphinx_polyversion.main import main as poly_main
 
-@docker_client
-def _build_drawio(docker: Optional[DockerClient], drawio_root: Path, destination: Path):
+def _build_drawio(docker: Optional[DockerClient], root_dir: str):
+    drawio_root = root_dir + "/docs/source/drawio_src"
+    destination = root_dir + "/docs/source/_static/drawio"
+    docker = DockerClient(
+        compose_files=[f"{root_dir}/compose.yml"],
+        compose_profiles=["context_storage", "stats"],
+    )
     if len(docker.image.list("rlespinasse/drawio-export")) == 0:
         docker.image.pull("rlespinasse/drawio-export", quiet=True)
     docker.container.run(
@@ -35,8 +40,11 @@ def _build_drawio(docker: Optional[DockerClient], drawio_root: Path, destination
         volumes=[(drawio_root, "/data", "rw")],
     )
 
-    print(str(destination))
     print(str(drawio_root))
+    print(str(destination))
+    
+    drawio_root = Path(drawio_root)
+    destination = Path(destination)
     destination.mkdir(parents=True, exist_ok=True)
     for path in drawio_root.glob("./**/export"):
         target = destination / path.relative_to(drawio_root).parent
@@ -64,6 +72,6 @@ def docs(docker: Optional[DockerClient]):
 def dff_funcs(root_dir: str):
     drawio_root = root_dir + "/docs/source/drawio_src"
     drawio_destination = root_dir + "/docs/source/_static/drawio"
-    _build_drawio(drawio_root=drawio_root, destination=drawio_destination)
+    _build_drawio(root_dir=root_dir)
     apiref_dir = root_dir + "/docs/source/apiref"
     apidoc.main(["-e", "-E", "-f", "-o", apiref_dir, "dff"])
