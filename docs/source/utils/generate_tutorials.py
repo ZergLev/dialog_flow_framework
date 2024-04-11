@@ -65,6 +65,7 @@ def create_index_file(
         for subpackage in included[2]:
             contents += f"\n{subpackage[1]}\n{'-' * len(subpackage[1])}\n"
             print(f"{included[0]}.{subpackage[0]}")
+            print(files)
             contents += generate_nb_gallery(f"{included[0]}.{subpackage[0]}", files)
 
     destination.parent.mkdir(exist_ok=True, parents=True)
