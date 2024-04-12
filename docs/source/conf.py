@@ -157,7 +157,7 @@ html_theme_options = {
         "version_match": current[0],
     },
     "navbar_start": ["navbar-logo"],
-    "navbar_end": ["version-switcher"],
+    "navbar_end": ["navbar-icon-links.html", "version-switcher"],
 }
 
 favicons = [
