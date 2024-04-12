@@ -37,7 +37,7 @@ def setup(root_dir: str, output_dir: str):
             ("tutorials.utils", "Utils"),
             ("tutorials.stats", "Stats"),
         ],
-        # source=(root_dir + "/tutorials"),
+        source=(root_dir + "/not_tutorials"),
         destination=(root_dir + "/docs/source/tutorials"),
     )
     print(root_dir + "/tutorials")
@@ -53,5 +53,5 @@ def setup(root_dir: str, output_dir: str):
             ("dff.utils.turn_caching", "Caching"),
             ("dff.utils.db_benchmark", "DB Benchmark"),
         ],
-        # root_dir=root_dir,
+        root_dir=root_dir + "not/not",
     )
