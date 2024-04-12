@@ -158,7 +158,7 @@ html_theme_options = {
     },
     "navbar_start": ["navbar-logo"],
     "navbar_persistent": ["search-field.html", "theme-switcher.html"],
-    "navbar_align": "left",
+    # "navbar_align": "left",
     "navbar_end": ["version-switcher.html", "navbar-icon-links.html"],
 }
 
