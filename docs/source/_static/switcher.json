@@ -1,7 +1,7 @@
 [
     {
-        "name": "stable(master)",
-        "version": "master",
+        "name": "0.7.0(stable)",
+        "version": "0.7.0",
         "url": "https://zerglev.github.io/dialog_flow_framework/master/index.html"
     },
     {
