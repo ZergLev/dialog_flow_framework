@@ -1,5 +1,6 @@
 from pathlib import Path
 from datetime import datetime
+# from functools import partial
 from sphinx_polyversion import *
 from sphinx_polyversion.git import *
 from sphinx_polyversion.pyvenv import Poetry
@@ -64,6 +65,7 @@ DefaultDriver(
     ),
     builder=BUILDER,
     env=Poetry.factory(args=POETRY_ARGS),
+    selector=partial(closest_tag, root),
     template_dir=root / src / "templates",
     static_dir=root / src / "static",
     mock=MOCK_DATA,
