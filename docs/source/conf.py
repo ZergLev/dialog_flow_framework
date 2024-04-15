@@ -121,7 +121,9 @@ html_css_files = [
 ]
 
 
-json_url = "https://zerglev.github.io/dialog_flow_framework/master/_static/switcher.json"
+json_url = "https://zerglev.github.io/dialog_flow_framework/v0.7.0/_static/switcher.json"
+# Need to make a better url. Could it be stored in dev? Or passed to older versions somehow?
+# It has to be addressed before release.
 
 # Theme options
 html_theme_options = {
