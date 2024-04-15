@@ -49,10 +49,13 @@ root = Git.root(Path(__file__).parent)
 src = Path(SOURCE_DIR)
 
 # Use different builders for different versions
+# Doesn't work for now (polyversion dev's instructions don't work)
+"""
 BUILDER = {
     None: DffSphinxBuilder(src, args=SPHINX_ARGS),  # default
     "v0.7.0": OlderDffSphinxBuilder(src, args=SPHINX_ARGS), # only for v0.7.0
 }
+"""
 
 # Setup driver and run it
 DefaultDriver(
@@ -64,7 +67,8 @@ DefaultDriver(
         buffer_size=1 * 10**9,  # 1 GB
         predicate=file_predicate([src]), # exclude refs without source dir
     ),
-    builder=BUILDER,
+    # builder=BUILDER,
+    builder=DffSphinxBuilder(src, args=SPHINX_ARGS),
     env=Poetry.factory(args=POETRY_ARGS),
     selector=partial(closest_tag, root),
     template_dir=root / src / "templates",
