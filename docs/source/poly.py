@@ -1,6 +1,6 @@
 from pathlib import Path
 from datetime import datetime
-# from functools import partial
+from functools import partial
 from sphinx_polyversion import *
 from sphinx_polyversion.git import *
 from sphinx_polyversion.pyvenv import Poetry
