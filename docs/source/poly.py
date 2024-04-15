@@ -62,7 +62,7 @@ DefaultDriver(
         buffer_size=1 * 10**9,  # 1 GB
         predicate=file_predicate([src]), # exclude refs without source dir
     ),
-    builder=BUILDER
+    builder=BUILDER,
     env=Poetry.factory(args=POETRY_ARGS),
     template_dir=root / src / "templates",
     static_dir=root / src / "static",
