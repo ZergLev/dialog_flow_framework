@@ -42,15 +42,15 @@ MOCK = False
 # Load overrides read from commandline to global scope
 apply_overrides(globals())
 
+# Determine repository root directory
+root = Git.root(Path(__file__).parent)
+src = Path(SOURCE_DIR)
+
 # Use different builders for different versions
 BUILDER = {
     None: DffSphinxBuilder(src, args=SPHINX_ARGS),  # default
     "v0.7.0": OlderDffSphinxBuilder(src, args=SPHINX_ARGS), # only for v0.7.0
 }
-
-# Determine repository root directory
-root = Git.root(Path(__file__).parent)
-src = Path(SOURCE_DIR)
 
 # Setup driver and run it
 DefaultDriver(
