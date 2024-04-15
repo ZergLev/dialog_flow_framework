@@ -88,7 +88,7 @@ class DffSphinxBuilder(CommandBuilder):
         print("setup function finished probably")
         
         # Replacing old conf.py file with the newest one
-        newer_conf_path = (os.getcwd + "docs/source/conf.py")
+        newer_conf_path = (os.getcwd() + "docs/source/conf.py")
         print(newer_conf_path)
         older_conf_path = str(output_dir) + "/docs/source/conf.py"
         shutil.copyfile(newer_conf_path, older_conf_path)
