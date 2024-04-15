@@ -10,7 +10,7 @@ from docs.source.builder import DffSphinxBuilder
 BRANCH_REGEX = r"(dev|test_branch|test_branch_2|feat/sphinx_multiversion|sphinx_multiversion_test)"
 
 #: Regex matching the tags to build docs for
-TAG_REGEX = r"(0.7.0)"
+TAG_REGEX = r"(v0.7.0)"
 # That was just 0.7.0, need to change that on release to auto tags.
 
 #: Output dir relative to project root
