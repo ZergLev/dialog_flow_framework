@@ -90,7 +90,8 @@ class DffSphinxBuilder(CommandBuilder):
         # Replacing old conf.py file with the newest one
         newer_conf_path = (os.getcwd() + "/docs/source/conf.py")
         print(newer_conf_path)
-        older_conf_path = str(output_dir) + "/docs/source/conf.py"
+        older_conf_path = str(source_dir) + "/conf.py"
+        print(older_conf_path)
         shutil.copyfile(newer_conf_path, older_conf_path)
         
         # pre hook
