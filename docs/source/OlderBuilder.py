@@ -19,7 +19,7 @@ import scripts.doc
 from sphinx_polyversion.sphinx import CommandBuilder, Placeholder
 
 
-class DffSphinxBuilder(CommandBuilder):
+class OlderDffSphinxBuilder(CommandBuilder):
     def __init__(
         self,
         source: str | PurePath,
@@ -86,14 +86,6 @@ class DffSphinxBuilder(CommandBuilder):
         scripts.doc.dff_funcs(str(root_dir))
         setup(str(root_dir), str(output_dir))
         print("setup function finished probably")
-        
-        # Replacing old conf.py file with the newest one
-        # This shouldn't be there in builders for older versions.
-        newer_conf_path = (os.getcwd() + "/docs/source/conf.py")
-        print(newer_conf_path)
-        older_conf_path = str(source_dir) + "/conf.py"
-        print(older_conf_path)
-        shutil.copyfile(newer_conf_path, older_conf_path)
         
         # pre hook
         if self.pre_cmd:

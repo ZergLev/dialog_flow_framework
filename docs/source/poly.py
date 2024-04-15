@@ -5,6 +5,7 @@ from sphinx_polyversion.git import *
 from sphinx_polyversion.pyvenv import Poetry
 # from sphinx_polyversion.sphinx import SphinxBuilder
 from docs.source.builder import DffSphinxBuilder
+from docs.source.OlderBuilder import OlderDffSphinxBuilder
 
 #: Regex matching the branches to build docs for
 BRANCH_REGEX = r"(dev|master|test_branch|test_branch_2|feat/sphinx_multiversion|sphinx_multiversion_test)"
@@ -41,6 +42,12 @@ MOCK = False
 # Load overrides read from commandline to global scope
 apply_overrides(globals())
 
+# Use different builders for different versions
+BUILDER = {
+    None: DffSphinxBuilder(src, args=SPHINX_ARGS),  # default
+    "v0.7.0": OlderDffSphinxBuilder(src, args=SPHINX_ARGS), # only for v0.7.0
+}
+
 # Determine repository root directory
 root = Git.root(Path(__file__).parent)
 src = Path(SOURCE_DIR)
@@ -55,7 +62,7 @@ DefaultDriver(
         buffer_size=1 * 10**9,  # 1 GB
         predicate=file_predicate([src]), # exclude refs without source dir
     ),
-    builder=DffSphinxBuilder(src, args=SPHINX_ARGS),
+    builder=BUILDER
     env=Poetry.factory(args=POETRY_ARGS),
     template_dir=root / src / "templates",
     static_dir=root / src / "static",
