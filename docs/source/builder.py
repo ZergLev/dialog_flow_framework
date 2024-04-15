@@ -1,6 +1,7 @@
 from __future__ import annotations
 import enum
 import os
+import shutil
 from logging import getLogger
 from pathlib import Path, PurePath
 from subprocess import CalledProcessError
@@ -85,6 +86,13 @@ class DffSphinxBuilder(CommandBuilder):
         scripts.doc.dff_funcs(str(root_dir))
         setup(str(root_dir), str(output_dir))
         print("setup function finished probably")
+        
+        # Replacing old conf.py file with the newest one
+        newer_conf_path = (os.getcwd + "docs/source/conf.py")
+        print(newer_conf_path)
+        older_conf_path = str(output_dir) + "/docs/source/conf.py"
+        shutil.copyfile(newer_conf_path, older_conf_path)
+        
         # pre hook
         if self.pre_cmd:
             out, err, rc = await environment.run(*map(replace, self.pre_cmd), env=env)
