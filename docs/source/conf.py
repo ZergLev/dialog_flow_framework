@@ -125,6 +125,12 @@ json_url = "https://zerglev.github.io/dialog_flow_framework/master/_static/switc
 # Need to make a better url. Could it be stored in dev? Should it be passed to older versions somehow?
 # It has to be addressed before release.
 
+# Checking for dev before passing version to switcher
+if current[0] == "dev":
+    version_data = "dev"
+else:
+    version_data = version
+
 # Theme options
 html_theme_options = {
     "header_links_before_dropdown": 5,
@@ -155,8 +161,7 @@ html_theme_options = {
     "secondary_sidebar_items": ["page-toc", "source-links", "example-links"],
     "switcher": {
         "json_url": json_url,
-        # "version_match" : version,
-        "version_match": current[0],
+        "version_match" : version_data,
     },
     "navbar_persistent": ["search-button.html", "theme-switcher.html"],
     # "navbar_align": "left",
