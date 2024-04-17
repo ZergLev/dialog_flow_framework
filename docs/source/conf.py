@@ -128,7 +128,7 @@ json_url = "https://zerglev.github.io/dialog_flow_framework/master/_static/switc
 # Checking for dev before passing version to switcher
 if current[0] == "dev":
     version_data = "dev"
-    version = dev
+    version = "0.8.0"
 else:
     version_data = version
 
