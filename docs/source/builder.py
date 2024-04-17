@@ -64,6 +64,7 @@ class DffSphinxBuilder(CommandBuilder):
             The metadata to use for building.
         """
         self.logger.info("Building...")
+        root_dir = environment.path.absolute()
         source_dir = str(environment.path.absolute() / self.source)
 
         def replace(v: Any) -> str:
@@ -88,7 +89,6 @@ class DffSphinxBuilder(CommandBuilder):
         spec.loader.exec_module(setup_module)
 
         # doing DFF funcs before doc building
-        root_dir = environment.path.absolute()
         scripts.doc.dff_funcs(str(root_dir))
         setup_module.setup(str(root_dir), str(output_dir))
         print("setup function finished probably")
