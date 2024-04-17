@@ -2,6 +2,7 @@ from __future__ import annotations
 import enum
 import os
 import shutil
+import importlib
 from logging import getLogger
 from pathlib import Path, PurePath
 from subprocess import CalledProcessError
@@ -14,7 +15,6 @@ from sphinx_polyversion.json import GLOBAL_ENCODER, JSONable
 if TYPE_CHECKING:
     import json
 
-from docs.source.setup import setup
 import scripts.doc
 from sphinx_polyversion.sphinx import CommandBuilder, Placeholder
 
@@ -84,7 +84,8 @@ class DffSphinxBuilder(CommandBuilder):
         # doing DFF funcs before doc building
         root_dir = environment.path.absolute()
         scripts.doc.dff_funcs(str(root_dir))
-        setup(str(root_dir), str(output_dir))
+        setup_module = importlib.import_module(root_dir + "/docs/source/setup.py")
+        setup_module.setup(str(root_dir), str(output_dir))
         print("setup function finished probably")
         
         # Replacing old conf.py file with the newest one

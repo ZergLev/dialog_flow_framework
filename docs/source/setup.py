@@ -57,3 +57,4 @@ def setup(root_dir: str, output_dir: str):
         root_dir=root_dir,
     )
     """
+    print("setup function called")

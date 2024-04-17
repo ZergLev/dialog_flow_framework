@@ -162,6 +162,7 @@ html_theme_options = {
     "navbar_persistent": ["search-button.html", "theme-switcher.html"],
     # "navbar_align": "left",
     "navbar_end": ["version-switcher.html", "navbar-icon-links.html"],
+    "show_version_warning_banner": True,
 }
 
 favicons = [
