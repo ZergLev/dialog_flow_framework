@@ -84,7 +84,7 @@ class DffSphinxBuilder(CommandBuilder):
         # doing DFF funcs before doc building
         root_dir = environment.path.absolute()
         scripts.doc.dff_funcs(str(root_dir))
-        setup_module = importlib.import_module(root_dir + "/docs/source/setup.py")
+        setup_module = importlib.import_module(str(root_dir) + "/docs/source/setup.py")
         setup_module.setup(str(root_dir), str(output_dir))
         print("setup function finished probably")
         
