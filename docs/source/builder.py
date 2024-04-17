@@ -65,7 +65,6 @@ class DffSphinxBuilder(CommandBuilder):
             The metadata to use for building.
         """
         self.logger.info("Building...")
-        root_dir = environment.path.absolute()
         source_dir = str(environment.path.absolute() / self.source)
 
         def replace(v: Any) -> str:
@@ -84,10 +83,13 @@ class DffSphinxBuilder(CommandBuilder):
         output_dir.mkdir(exist_ok=True, parents=True)
 
         # Importing version-dependent module setup.py
+        root_dir = environment.path.absolute()
         spec = importlib.util.spec_from_file_location("setup", str(source_dir) + "/setup.py")
         print(spec)
         setup_module = importlib.util.module_from_spec(spec)
+        print(setup_module)
         sys.modules["setup"] = setup_module
+        print(sys.modules["setup"])
         spec.loader.exec_module(setup_module)
 
         # doing DFF funcs before doc building
