@@ -2,7 +2,7 @@ from __future__ import annotations
 import enum
 import os
 import shutil
-import importlib
+import importlib.util
 from logging import getLogger
 from pathlib import Path, PurePath
 from subprocess import CalledProcessError
@@ -81,10 +81,15 @@ class DffSphinxBuilder(CommandBuilder):
         # create output directory
         output_dir.mkdir(exist_ok=True, parents=True)
 
+        # Importing version-dependent module setup.py
+        spec = importlib.util.spec_from_file_location("setup", str(root_dir) + "/docs/source/")
+        setup_module = importlib.util.module_from_spec(spec)
+        sys.modules[setup] = setup_module
+        spec.loader.exec_module(setup_module)
+
         # doing DFF funcs before doc building
         root_dir = environment.path.absolute()
         scripts.doc.dff_funcs(str(root_dir))
-        setup_module = importlib.import_module(str(root_dir) + "/docs/source/setup")
         setup_module.setup(str(root_dir), str(output_dir))
         print("setup function finished probably")
         
