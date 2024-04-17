@@ -18,7 +18,7 @@ def create_notebook_link(source: Path, destination: Path):
     print("destination = ", destination)
     # result = copy(source.resolve(), destination.resolve())
     # print(result)
-    
+
     # Changing this into a create_notebook_copy, cause version-dependent source
     # files get deleted along with a temp directory during polyversion docs build.
 
@@ -38,7 +38,10 @@ def generate_nb_gallery(package: str, files: List[Path]) -> str:
 
 
 def create_index_file(
-    included: Union[Tuple[str, str], Tuple[str, str, List[Tuple[str, str]]]], files: List[Path], destination: Path, source_dir: Path = "docs/source",
+    included: Union[Tuple[str, str], Tuple[str, str, List[Tuple[str, str]]]],
+    files: List[Path],
+    destination: Path,
+    source_dir: Path = "docs/source",
 ):
     """
     Create a package index file.
@@ -171,4 +174,6 @@ def generate_tutorial_links_for_notebook_creation(
     for included in include:
         print(included)
         print(dest / Path(f"index_{included[1].replace(' ', '_').lower()}.rst"))
-        create_index_file(included, filtered_links, dest / Path(f"index_{included[1].replace(' ', '_').lower()}.rst"), dest)
+        create_index_file(
+            included, filtered_links, dest / Path(f"index_{included[1].replace(' ', '_').lower()}.rst"), dest
+        )

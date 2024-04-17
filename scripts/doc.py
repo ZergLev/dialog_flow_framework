@@ -15,6 +15,7 @@ from .clean import clean_docs
 
 from sphinx_polyversion.main import main as poly_main
 
+
 def _build_drawio(root_dir: str):
     drawio_root = root_dir + "/docs/source/drawio_src"
     destination = root_dir + "/docs/source/_static/drawio"
@@ -42,7 +43,7 @@ def _build_drawio(root_dir: str):
 
     print(str(drawio_root))
     print(str(destination))
-    
+
     drawio_root = Path(drawio_root)
     destination = Path(destination)
     destination.mkdir(parents=True, exist_ok=True)
@@ -60,7 +61,7 @@ def docs(docker: Optional[DockerClient]):
         clean_docs()
         dotenv.load_dotenv(".env_file")
         os.environ["DISABLE_INTERACTIVE_MODE"] = "1"
-	# build_drawio should be called in all revisions and I am not sure how yet
+        # build_drawio should be called in all revisions and I am not sure how yet
         result = build.make_main(["-M", "clean", "docs/source", "docs/build"])
         poly_path = "docs/source/poly.py"
         poly_main([poly_path, poly_path])
@@ -68,6 +69,8 @@ def docs(docker: Optional[DockerClient]):
     else:
         print(f"{Fore.RED}Docs can be built on Linux platform only!{Style.RESET_ALL}")
         exit(1)
+
+
 # Functions to be called from DffSphinxBuilder before build
 def dff_funcs(root_dir: str):
     drawio_root = root_dir + "/docs/source/drawio_src"
