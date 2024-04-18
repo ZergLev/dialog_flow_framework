@@ -21,13 +21,6 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
-        with:
-          fetch-depth: 0
-      - run: |
-          git remote show origin
-          git checkout dev
-          git checkout master
-          git branch --all
 
       - name: set up python 3.9
         uses: actions/setup-python@v5
