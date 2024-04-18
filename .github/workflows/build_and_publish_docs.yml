@@ -72,4 +72,4 @@ jobs:
         with:
           branch: gh-pages
           folder: docs/build/
-          single-commit: True
+          clean: False
