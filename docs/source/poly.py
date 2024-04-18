@@ -13,9 +13,9 @@ from docs.source.OlderBuilder import OlderDffSphinxBuilder
 BRANCH_REGEX = r"(dev|master|test_branch|test_branch_2|feat/sphinx_multiversion|sphinx_multiversion_test)"
 
 #: Regex matching the tags to build docs for
-TAG_REGEX = r"(v0.7.0|v0.8.0)"
+# TAG_REGEX = r"(v0.7.0|v0.8.0)"
 # That was just 0.7.0, need to change that on release to auto tags.
-# TAG_REGEX = r"-"
+TAG_REGEX = r"-"
 
 #: Output dir relative to project root
 OUTPUT_DIR = "docs/build"

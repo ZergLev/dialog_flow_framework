@@ -98,7 +98,7 @@ class DffSphinxBuilder(CommandBuilder):
         # This shouldn't be there in builders for older versions.
         newer_conf_path = (os.getcwd() + "/docs/source/conf.py")
         older_conf_path = str(source_dir) + "/conf.py"
-        # shutil.copyfile(newer_conf_path, older_conf_path)
+        shutil.copyfile(newer_conf_path, older_conf_path)
         
         # pre hook
         if self.pre_cmd:
