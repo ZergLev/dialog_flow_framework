@@ -49,7 +49,6 @@
     <script src="../_static/auto-render.min.js?v=8b9f325c"></script>
     <script src="../_static/katex_autorenderer.js?v=bebc588a"></script>
     <script crossorigin="anonymous" integrity="sha256-Ae2Vz/4ePdIu6ZyI/5ZGsYnb+m0JlOmKPjt6XZ9JJkA=" src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/@jupyter-widgets/html-manager@^1.0.1/dist/embed-amd.js"></script>
     <script>DOCUMENTATION_OPTIONS.pagename = 'user_guides/context_guide';</script>
     <script>
         DOCUMENTATION_OPTIONS.theme_version = '0.14.4';
@@ -713,7 +712,7 @@ when contexts are shared over high latency networks.</p></li>
 </ul>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
-<p>See the <a class="reference internal" href="../tutorials/tutorials.script.core.7_pre_response_processing.html"><span class="doc">preprocessing tutorial</span></a>.</p>
+<p>See the <a class="reference external" href="../tutorials/tutorials.script.core.7_pre_response_processing.py">preprocessing tutorial</a>.</p>
 </div>
 </section>
 <section id="private-methods">
@@ -723,17 +722,17 @@ when contexts are shared over high latency networks.</p></li>
 This functionality can prove useful if you want to create a middleware component that overrides the pipeline functionality.</p></li>
 <li><p><strong>add_request</strong>: Add a request to the context.
 It updates the <cite>requests</cite> dictionary. This method is called by the <cite>Pipeline</cite> component
-before any of the <a class="reference internal" href="../tutorials/tutorials.pipeline.3_pipeline_dict_with_services_basic.html"><span class="doc">pipeline services</span></a> are executed,
+before any of the <a class="reference external" href="../tutorials/tutorials.pipeline.3_pipeline_dict_with_services_basic.py">pipeline services</a> are executed,
 including <a class="reference external" href="../apiref/dff.pipeline.pipeline.actor.html">Actor</a>.</p></li>
 <li><p><strong>add_response</strong>: Add a response to the context.
 It updates the <cite>responses</cite> dictionary. This function is run by the <a class="reference external" href="../apiref/dff.pipeline.pipeline.actor.html">Actor</a> pipeline component at the end of the turn, after it has run
-the <a class="reference internal" href="../tutorials/tutorials.script.core.7_pre_response_processing.html"><span class="doc">PRE_RESPONSE_PROCESSING</span></a> functions.</p>
+the <a class="reference external" href="../tutorials/tutorials.script.core.7_pre_response_processing.py">PRE_RESPONSE_PROCESSING</a> functions.</p>
 <p>To be more precise, this method is called between the <code class="docutils literal notranslate"><span class="pre">CREATE_RESPONSE</span></code> and <code class="docutils literal notranslate"><span class="pre">FINISH_TURN</span></code> stages.
 For more information about stages, see <a class="reference external" href="../apiref/dff.script.core.types.html#dff.script.core.types.ActorStage">ActorStages</a>.</p>
 </li>
 <li><p><strong>add_label</strong>: Add a label to the context.
 It updates the <cite>labels</cite> field. This method is called by the <a class="reference external" href="../apiref/dff.pipeline.pipeline.actor.html">Actor</a> component when transition conditions
-have been resolved, and when <a class="reference internal" href="../tutorials/tutorials.script.core.9_pre_transitions_processing.html"><span class="doc">PRE_TRANSITIONS_PROCESSING</span></a> callbacks have been run.</p>
+have been resolved, and when <a class="reference external" href="../tutorials/tutorials.script.core.9_pre_transitions_processing.py">PRE_TRANSITIONS_PROCESSING</a> callbacks have been run.</p>
 <p>To be more precise, this method is called between the <code class="docutils literal notranslate"><span class="pre">GET_NEXT_NODE</span></code> and <code class="docutils literal notranslate"><span class="pre">REWRITE_NEXT_NODE</span></code> stages.
 For more information about stages, see <a class="reference external" href="../apiref/dff.script.core.types.html#dff.script.core.types.ActorStage">ActorStages</a>.</p>
 </li>
