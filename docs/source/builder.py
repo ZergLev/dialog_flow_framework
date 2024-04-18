@@ -84,7 +84,6 @@ class DffSphinxBuilder(CommandBuilder):
 
         # Importing version-dependent module setup.py
         root_dir = environment.path.absolute()
-        """
         os.system("ls" + str(source_dir))
         spec = importlib.util.spec_from_file_location("setup", str(source_dir) + "/setup.py")
         setup_module = importlib.util.module_from_spec(spec)
@@ -100,7 +99,7 @@ class DffSphinxBuilder(CommandBuilder):
         newer_conf_path = (os.getcwd() + "/docs/source/conf.py")
         older_conf_path = str(source_dir) + "/conf.py"
         shutil.copyfile(newer_conf_path, older_conf_path)
-        """
+        
         # pre hook
         if self.pre_cmd:
             out, err, rc = await environment.run(*map(replace, self.pre_cmd), env=env)
