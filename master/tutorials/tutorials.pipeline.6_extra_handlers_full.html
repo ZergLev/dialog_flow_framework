@@ -574,12 +574,6 @@ document.write(`
 <li class="toctree-l2"><a class="reference internal" href="tutorials.script.core.1_basics.html">Core: 1. Basics</a></li>
 <li class="toctree-l2"><a class="reference internal" href="tutorials.script.core.2_conditions.html">Core: 2. Conditions</a></li>
 <li class="toctree-l2"><a class="reference internal" href="tutorials.script.core.3_responses.html">Core: 3. Responses</a></li>
-<li class="toctree-l2"><a class="reference internal" href="tutorials.script.core.4_transitions.html">Core: 4. Transitions</a></li>
-<li class="toctree-l2"><a class="reference internal" href="tutorials.script.core.5_global_transitions.html">Core: 5. Global transitions</a></li>
-<li class="toctree-l2"><a class="reference internal" href="tutorials.script.core.6_context_serialization.html">Core: 6. Context serialization</a></li>
-<li class="toctree-l2"><a class="reference internal" href="tutorials.script.core.7_pre_response_processing.html">Core: 7. Pre-response processing</a></li>
-<li class="toctree-l2"><a class="reference internal" href="tutorials.script.core.8_misc.html">Core: 8. Misc</a></li>
-<li class="toctree-l2"><a class="reference internal" href="tutorials.script.core.9_pre_transitions_processing.html">Core: 9. Pre-transitions processing</a></li>
 <li class="toctree-l2"><a class="reference internal" href="tutorials.script.responses.1_basics.html">Responses: 1. Basics</a></li>
 <li class="toctree-l2"><a class="reference internal" href="tutorials.script.responses.2_buttons.html">Responses: 2. Buttons</a></li>
 <li class="toctree-l2"><a class="reference internal" href="tutorials.script.responses.3_media.html">Responses: 3. Media</a></li>
@@ -854,66 +848,66 @@ conversion (etc.) operations or service and service groups statistics collection
 <div class="output_area docutils container">
 <div class="highlight"><pre>
 Stringified misc: {
-    &#34;service_group_0-time&#34;: &#34;2024-04-18 14:44:38.334878&#34;
+    &#34;service_group_0-time&#34;: &#34;2024-04-18 16:18:39.219316&#34;
 }
 (user) &gt;&gt;&gt; text=&#39;Hi&#39;
  (bot) &lt;&lt;&lt; text=&#39;Hi, how are you?&#39;
 Stringified misc: {
-    &#34;service_group_0-time&#34;: &#34;2024-04-18 14:44:38.347214&#34;,
-    &#34;heavy_service_0-time&#34;: &#34;0:00:00.001302&#34;,
+    &#34;service_group_0-time&#34;: &#34;2024-04-18 16:18:39.231195&#34;,
+    &#34;heavy_service_0-time&#34;: &#34;0:00:00.001308&#34;,
     &#34;heavy_service_0-ram&#34;: 0,
-    &#34;heavy_service_1-time&#34;: &#34;0:00:00.000970&#34;,
+    &#34;heavy_service_1-time&#34;: &#34;0:00:00.000971&#34;,
     &#34;heavy_service_1-ram&#34;: 0,
-    &#34;heavy_service_2-time&#34;: &#34;0:00:00.001033&#34;,
+    &#34;heavy_service_2-time&#34;: &#34;0:00:00.000956&#34;,
     &#34;heavy_service_2-ram&#34;: 0,
-    &#34;heavy_service_3-time&#34;: &#34;0:00:00.000977&#34;,
+    &#34;heavy_service_3-time&#34;: &#34;0:00:00.000980&#34;,
     &#34;heavy_service_3-ram&#34;: 0,
-    &#34;heavy_service_4-time&#34;: &#34;0:00:00.000964&#34;,
+    &#34;heavy_service_4-time&#34;: &#34;0:00:00.000958&#34;,
     &#34;heavy_service_4-ram&#34;: 0
 }
 (user) &gt;&gt;&gt; text=&#39;i&#39;m fine, how are you?&#39;
  (bot) &lt;&lt;&lt; text=&#39;Good. What do you want to talk about?&#39;
 Stringified misc: {
-    &#34;service_group_0-time&#34;: &#34;2024-04-18 14:44:38.354931&#34;,
-    &#34;heavy_service_0-time&#34;: &#34;0:00:00.000998&#34;,
+    &#34;service_group_0-time&#34;: &#34;2024-04-18 16:18:39.238679&#34;,
+    &#34;heavy_service_0-time&#34;: &#34;0:00:00.001014&#34;,
     &#34;heavy_service_0-ram&#34;: 0,
-    &#34;heavy_service_1-time&#34;: &#34;0:00:00.000981&#34;,
+    &#34;heavy_service_1-time&#34;: &#34;0:00:00.000969&#34;,
     &#34;heavy_service_1-ram&#34;: 0,
-    &#34;heavy_service_2-time&#34;: &#34;0:00:00.000975&#34;,
+    &#34;heavy_service_2-time&#34;: &#34;0:00:00.000968&#34;,
     &#34;heavy_service_2-ram&#34;: 0,
-    &#34;heavy_service_3-time&#34;: &#34;0:00:00.000975&#34;,
+    &#34;heavy_service_3-time&#34;: &#34;0:00:00.000936&#34;,
     &#34;heavy_service_3-ram&#34;: 0,
-    &#34;heavy_service_4-time&#34;: &#34;0:00:00.000977&#34;,
+    &#34;heavy_service_4-time&#34;: &#34;0:00:00.000957&#34;,
     &#34;heavy_service_4-ram&#34;: 0
 }
 (user) &gt;&gt;&gt; text=&#39;Let&#39;s talk about music.&#39;
  (bot) &lt;&lt;&lt; text=&#39;Sorry, I can not talk about music now.&#39;
 Stringified misc: {
-    &#34;service_group_0-time&#34;: &#34;2024-04-18 14:44:38.362643&#34;,
-    &#34;heavy_service_0-time&#34;: &#34;0:00:00.001008&#34;,
+    &#34;service_group_0-time&#34;: &#34;2024-04-18 16:18:39.246072&#34;,
+    &#34;heavy_service_0-time&#34;: &#34;0:00:00.000943&#34;,
     &#34;heavy_service_0-ram&#34;: 0,
-    &#34;heavy_service_1-time&#34;: &#34;0:00:00.000979&#34;,
+    &#34;heavy_service_1-time&#34;: &#34;0:00:00.000947&#34;,
     &#34;heavy_service_1-ram&#34;: 0,
-    &#34;heavy_service_2-time&#34;: &#34;0:00:00.001009&#34;,
+    &#34;heavy_service_2-time&#34;: &#34;0:00:00.000938&#34;,
     &#34;heavy_service_2-ram&#34;: 0,
-    &#34;heavy_service_3-time&#34;: &#34;0:00:00.000990&#34;,
+    &#34;heavy_service_3-time&#34;: &#34;0:00:00.000955&#34;,
     &#34;heavy_service_3-ram&#34;: 0,
-    &#34;heavy_service_4-time&#34;: &#34;0:00:00.000971&#34;,
+    &#34;heavy_service_4-time&#34;: &#34;0:00:00.000969&#34;,
     &#34;heavy_service_4-ram&#34;: 0
 }
 (user) &gt;&gt;&gt; text=&#39;Ok, goodbye.&#39;
  (bot) &lt;&lt;&lt; text=&#39;bye&#39;
 Stringified misc: {
-    &#34;service_group_0-time&#34;: &#34;2024-04-18 14:44:38.370507&#34;,
-    &#34;heavy_service_0-time&#34;: &#34;0:00:00.001005&#34;,
+    &#34;service_group_0-time&#34;: &#34;2024-04-18 16:18:39.253485&#34;,
+    &#34;heavy_service_0-time&#34;: &#34;0:00:00.000964&#34;,
     &#34;heavy_service_0-ram&#34;: 0,
-    &#34;heavy_service_1-time&#34;: &#34;0:00:00.001019&#34;,
+    &#34;heavy_service_1-time&#34;: &#34;0:00:00.000994&#34;,
     &#34;heavy_service_1-ram&#34;: 0,
-    &#34;heavy_service_2-time&#34;: &#34;0:00:00.001050&#34;,
+    &#34;heavy_service_2-time&#34;: &#34;0:00:00.000913&#34;,
     &#34;heavy_service_2-ram&#34;: 0,
-    &#34;heavy_service_3-time&#34;: &#34;0:00:00.000991&#34;,
+    &#34;heavy_service_3-time&#34;: &#34;0:00:00.000931&#34;,
     &#34;heavy_service_3-ram&#34;: 0,
-    &#34;heavy_service_4-time&#34;: &#34;0:00:00.001052&#34;,
+    &#34;heavy_service_4-time&#34;: &#34;0:00:00.000920&#34;,
     &#34;heavy_service_4-ram&#34;: 0
 }
 (user) &gt;&gt;&gt; text=&#39;Hi&#39;

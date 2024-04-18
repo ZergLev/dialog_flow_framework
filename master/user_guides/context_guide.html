@@ -713,7 +713,7 @@ when contexts are shared over high latency networks.</p></li>
 </ul>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
-<p>See the <a class="reference internal" href="../tutorials/tutorials.script.core.7_pre_response_processing.html"><span class="doc">preprocessing tutorial</span></a>.</p>
+<p>See the <a class="reference external" href="../tutorials/tutorials.script.core.7_pre_response_processing.py">preprocessing tutorial</a>.</p>
 </div>
 </section>
 <section id="private-methods">
@@ -727,13 +727,13 @@ before any of the <a class="reference internal" href="../tutorials/tutorials.pip
 including <a class="reference external" href="../apiref/dff.pipeline.pipeline.actor.html">Actor</a>.</p></li>
 <li><p><strong>add_response</strong>: Add a response to the context.
 It updates the <cite>responses</cite> dictionary. This function is run by the <a class="reference external" href="../apiref/dff.pipeline.pipeline.actor.html">Actor</a> pipeline component at the end of the turn, after it has run
-the <a class="reference internal" href="../tutorials/tutorials.script.core.7_pre_response_processing.html"><span class="doc">PRE_RESPONSE_PROCESSING</span></a> functions.</p>
+the <a class="reference external" href="../tutorials/tutorials.script.core.7_pre_response_processing.py">PRE_RESPONSE_PROCESSING</a> functions.</p>
 <p>To be more precise, this method is called between the <code class="docutils literal notranslate"><span class="pre">CREATE_RESPONSE</span></code> and <code class="docutils literal notranslate"><span class="pre">FINISH_TURN</span></code> stages.
 For more information about stages, see <a class="reference external" href="../apiref/dff.script.core.types.html#dff.script.core.types.ActorStage">ActorStages</a>.</p>
 </li>
 <li><p><strong>add_label</strong>: Add a label to the context.
 It updates the <cite>labels</cite> field. This method is called by the <a class="reference external" href="../apiref/dff.pipeline.pipeline.actor.html">Actor</a> component when transition conditions
-have been resolved, and when <a class="reference internal" href="../tutorials/tutorials.script.core.9_pre_transitions_processing.html"><span class="doc">PRE_TRANSITIONS_PROCESSING</span></a> callbacks have been run.</p>
+have been resolved, and when <a class="reference external" href="../tutorials/tutorials.script.core.9_pre_transitions_processing.py">PRE_TRANSITIONS_PROCESSING</a> callbacks have been run.</p>
 <p>To be more precise, this method is called between the <code class="docutils literal notranslate"><span class="pre">GET_NEXT_NODE</span></code> and <code class="docutils literal notranslate"><span class="pre">REWRITE_NEXT_NODE</span></code> stages.
 For more information about stages, see <a class="reference external" href="../apiref/dff.script.core.types.html#dff.script.core.types.ActorStage">ActorStages</a>.</p>
 </li>
