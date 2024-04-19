@@ -1,5 +1,3 @@
-:source_name: dff/script/extras/conditions
-
 dff.script.extras.conditions package
 ====================================
 

@@ -1,5 +1,3 @@
-:source_name: dff/messengers/telegram/message
-
 .. automodule:: dff.messengers.telegram.message
    :members:
    :undoc-members:

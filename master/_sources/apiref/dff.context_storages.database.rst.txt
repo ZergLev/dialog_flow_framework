@@ -1,5 +1,3 @@
-:source_name: dff/context_storages/database
-
 .. automodule:: dff.context_storages.database
    :members:
    :undoc-members:

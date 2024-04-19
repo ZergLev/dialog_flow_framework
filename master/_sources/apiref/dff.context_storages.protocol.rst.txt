@@ -1,5 +1,3 @@
-:source_name: dff/context_storages/protocol
-
 .. automodule:: dff.context_storages.protocol
    :members:
    :undoc-members:

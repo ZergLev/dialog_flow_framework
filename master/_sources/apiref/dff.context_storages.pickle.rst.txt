@@ -1,5 +1,3 @@
-:source_name: dff/context_storages/pickle
-
 .. automodule:: dff.context_storages.pickle
    :members:
    :undoc-members:

@@ -1,5 +1,3 @@
-:source_name: dff/utils/testing/toy_script
-
 .. automodule:: dff.utils.testing.toy_script
    :members:
    :undoc-members:

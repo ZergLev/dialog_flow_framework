@@ -1,5 +1,3 @@
-:source_name: dff/messengers/common/interface
-
 .. automodule:: dff.messengers.common.interface
    :members:
    :undoc-members:

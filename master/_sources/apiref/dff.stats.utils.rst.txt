@@ -1,5 +1,3 @@
-:source_name: dff/stats/utils
-
 .. automodule:: dff.stats.utils
    :members:
    :undoc-members:

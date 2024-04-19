@@ -1,5 +1,3 @@
-:source_name: dff/utils/testing/common
-
 .. automodule:: dff.utils.testing.common
    :members:
    :undoc-members:
