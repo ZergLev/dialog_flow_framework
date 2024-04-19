@@ -1,3 +1,5 @@
+:source_name: dff/utils/db_benchmark/report
+
 .. automodule:: dff.utils.db_benchmark.report
    :members:
    :undoc-members:

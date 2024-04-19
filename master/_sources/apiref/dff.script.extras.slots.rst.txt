@@ -1,3 +1,5 @@
+:source_name: dff/script/extras/slots
+
 dff.script.extras.slots package
 ===============================
 

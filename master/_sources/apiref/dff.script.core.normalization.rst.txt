@@ -1,3 +1,5 @@
+:source_name: dff/script/core/normalization
+
 .. automodule:: dff.script.core.normalization
    :members:
    :undoc-members:

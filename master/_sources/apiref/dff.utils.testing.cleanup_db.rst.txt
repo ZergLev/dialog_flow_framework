@@ -1,3 +1,5 @@
+:source_name: dff/utils/testing/cleanup_db
+
 .. automodule:: dff.utils.testing.cleanup_db
    :members:
    :undoc-members:

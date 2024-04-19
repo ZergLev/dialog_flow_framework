@@ -1,3 +1,5 @@
+:source_name: dff/pipeline/service/group
+
 .. automodule:: dff.pipeline.service.group
    :members:
    :undoc-members:

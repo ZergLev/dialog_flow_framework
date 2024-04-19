@@ -1,3 +1,5 @@
+:source_name: dff/script/responses/std_responses
+
 .. automodule:: dff.script.responses.std_responses
    :members:
    :undoc-members:

@@ -1,3 +1,5 @@
+:source_name: dff/context_storages/json
+
 .. automodule:: dff.context_storages.json
    :members:
    :undoc-members:

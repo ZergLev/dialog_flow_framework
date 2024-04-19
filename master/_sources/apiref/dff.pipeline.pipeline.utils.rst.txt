@@ -1,3 +1,5 @@
+:source_name: dff/pipeline/pipeline/utils
+
 .. automodule:: dff.pipeline.pipeline.utils
    :members:
    :undoc-members:

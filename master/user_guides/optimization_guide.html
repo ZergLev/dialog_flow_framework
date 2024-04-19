@@ -49,6 +49,7 @@
     <script src="../_static/auto-render.min.js?v=8b9f325c"></script>
     <script src="../_static/katex_autorenderer.js?v=bebc588a"></script>
     <script crossorigin="anonymous" integrity="sha256-Ae2Vz/4ePdIu6ZyI/5ZGsYnb+m0JlOmKPjt6XZ9JJkA=" src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@jupyter-widgets/html-manager@^1.0.1/dist/embed-amd.js"></script>
     <script>DOCUMENTATION_OPTIONS.pagename = 'user_guides/optimization_guide';</script>
     <script>
         DOCUMENTATION_OPTIONS.theme_version = '0.14.4';
@@ -617,7 +618,7 @@ if you take advantage of the Opentelemetry package bundled with the library (<ci
 as described below.</p>
 <p>Since Locust testing can only target web apps,
 this approach only applies if you integrate your dialog pipeline into a web application.
-The <a class="reference external" href="../tutorials/tutorials.messengers.web_api_interface.1_fastapi.py">FastAPI integration tutorial</a>
+The <a class="reference internal" href="../tutorials/tutorials.messengers.web_api_interface.1_fastapi.html"><span class="doc">FastAPI integration tutorial</span></a>
 shows the most straightforward way to do this.
 At this stage, you will also need to instrument the pipeline components that you want to additionally profile
 using <cite>extractor functions</cite>. Put simply, you are decorating the components of the pipeline
@@ -625,7 +626,7 @@ with functions that can report their performance, e.g. their execution time or t
 <div class="admonition note">
 <p class="admonition-title">Note</p>
 <p>You can get more info on how instrumentation is done and statistics are collected
-in the <a class="reference external" href="../tutorials/tutorials.stats.1_extractor_functions.py">stats tutorial</a>.</p>
+in the <a class="reference internal" href="../tutorials/tutorials.stats.1_extractor_functions.html"><span class="doc">stats tutorial</span></a>.</p>
 </div>
 <p>When you are done setting up the instrumentation, you can launch the web server to accept connections from locust.</p>
 <p>The final step is to run a Locust file which will result in artificial load traffic being generated and sent to your server.
@@ -634,7 +635,7 @@ i.e. the requests to the server that will be made during testing.</p>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
 <p>An example Locust script along with instructions on how to run it can be found in the
-<a class="reference external" href="../tutorials/tutorials.messengers.web_api_interface.3_load_testing_with_locust.py">load testing tutorial</a>.
+<a class="reference internal" href="../tutorials/tutorials.messengers.web_api_interface.3_load_testing_with_locust.html"><span class="doc">load testing tutorial</span></a>.
 The simplest way, however, is to pass a locust file to the Python interpreter.</p>
 </div>
 <p>Once Locust is running, you can access its GUI, where you can set the number of users to emulate.
@@ -656,7 +657,7 @@ so you may prefer to change your database depending on the testing results.</p>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
 <p>The exact instructions of how the testing can be carried out are available in the
-<a class="reference external" href="../tutorials/tutorials.context_storages.8_db_benchmarking.py">DB benchmarking tutorial</a>.</p>
+<a class="reference internal" href="../tutorials/tutorials.context_storages.8_db_benchmarking.html"><span class="doc">DB benchmarking tutorial</span></a>.</p>
 </div>
 </section>
 <section id="optimization-techniques">
@@ -670,13 +671,13 @@ during a dialog turn and only when needed. E.g. you can take note of the <cite>c
 of the <cite>Pipeline</cite> module: while normally a pipeline service runs every turn, you can restrict it
 to only run on turns when a particular condition is satisfied, greatly reducing
 the number of performed actions (see the
-<a class="reference external" href="../tutorials/tutorials.pipeline.4_groups_and_conditions_full.py">Groups and Conditions tutorial</a>).</p></li>
+<a class="reference internal" href="../tutorials/tutorials.pipeline.4_groups_and_conditions_full.html"><span class="doc">Groups and Conditions tutorial</span></a>).</p></li>
 <li><p>Using caching for resource-consuming callbacks and actions may also prove to be a helpful strategy.
 In this manner, you can improve the computational efficiency of your pipeline,
 while making very few changes to the code itself. DFF includes a caching mechanism
 for response functions. However, the simplicity
 of the DFF API makes it easy to integrate any custom caching solutions that you may come up with.
-See the <a class="reference external" href="../tutorials/tutorials.utils.1_cache.py">Cache tutorial</a>.</p></li>
+See the <a class="reference internal" href="../tutorials/tutorials.utils.1_cache.html"><span class="doc">Cache tutorial</span></a>.</p></li>
 <li><p>Finally, be mindful about the use of computationally expensive algorithms, like NLU classifiers
 or LLM-based generative networks, since those require a great deal of time and resources
 to produce an answer. In case you need to use one, take full advantage of caching along with

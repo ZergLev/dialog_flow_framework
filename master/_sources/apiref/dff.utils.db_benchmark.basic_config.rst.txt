@@ -1,3 +1,5 @@
+:source_name: dff/utils/db_benchmark/basic_config
+
 .. automodule:: dff.utils.db_benchmark.basic_config
    :members:
    :undoc-members:

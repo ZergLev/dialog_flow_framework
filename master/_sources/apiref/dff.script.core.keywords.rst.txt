@@ -1,3 +1,5 @@
+:source_name: dff/script/core/keywords
+
 .. automodule:: dff.script.core.keywords
    :members:
    :undoc-members:

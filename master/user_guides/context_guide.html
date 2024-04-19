@@ -49,6 +49,7 @@
     <script src="../_static/auto-render.min.js?v=8b9f325c"></script>
     <script src="../_static/katex_autorenderer.js?v=bebc588a"></script>
     <script crossorigin="anonymous" integrity="sha256-Ae2Vz/4ePdIu6ZyI/5ZGsYnb+m0JlOmKPjt6XZ9JJkA=" src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@jupyter-widgets/html-manager@^1.0.1/dist/embed-amd.js"></script>
     <script>DOCUMENTATION_OPTIONS.pagename = 'user_guides/context_guide';</script>
     <script>
         DOCUMENTATION_OPTIONS.theme_version = '0.14.4';
@@ -722,7 +723,7 @@ when contexts are shared over high latency networks.</p></li>
 This functionality can prove useful if you want to create a middleware component that overrides the pipeline functionality.</p></li>
 <li><p><strong>add_request</strong>: Add a request to the context.
 It updates the <cite>requests</cite> dictionary. This method is called by the <cite>Pipeline</cite> component
-before any of the <a class="reference external" href="../tutorials/tutorials.pipeline.3_pipeline_dict_with_services_basic.py">pipeline services</a> are executed,
+before any of the <a class="reference internal" href="../tutorials/tutorials.pipeline.3_pipeline_dict_with_services_basic.html"><span class="doc">pipeline services</span></a> are executed,
 including <a class="reference external" href="../apiref/dff.pipeline.pipeline.actor.html">Actor</a>.</p></li>
 <li><p><strong>add_response</strong>: Add a response to the context.
 It updates the <cite>responses</cite> dictionary. This function is run by the <a class="reference external" href="../apiref/dff.pipeline.pipeline.actor.html">Actor</a> pipeline component at the end of the turn, after it has run

@@ -1,3 +1,5 @@
+:source_name: dff/pipeline/conditions
+
 .. automodule:: dff.pipeline.conditions
    :members:
    :undoc-members:

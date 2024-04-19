@@ -1,3 +1,5 @@
+:source_name: dff/stats/cli
+
 .. automodule:: dff.stats.cli
    :members:
    :undoc-members:

@@ -1,3 +1,5 @@
+:source_name: dff/pipeline/types
+
 .. automodule:: dff.pipeline.types
    :members:
    :undoc-members:
