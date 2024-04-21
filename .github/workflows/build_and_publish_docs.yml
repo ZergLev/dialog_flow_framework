@@ -78,12 +78,14 @@ jobs:
           path: docs/build/
           retention-days: 3
         
+      - uses: EndBug/add-and-commit@v9.1.4
+        with:
+          add: '-f .'
+        
       - name: delete build for this version/branch
         run: |
           ls
           ls ./docs
-          git add .
-          git commit -m "saving before checkout"
           git checkout gh-pages
           pwd
           ls
