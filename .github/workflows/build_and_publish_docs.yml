@@ -91,6 +91,7 @@ jobs:
         run: |
           pwd
           ls
+          ls /docs
         
       - name: deploy website
         if: ${{ github.ref == 'refs/heads/master' || github.ref == 'refs/heads/dev' }}
