@@ -51,8 +51,10 @@ jobs:
       - name: remove previous build for this version
         run: |
           git checkout gh-pages
-          rm -r ${{env.BRANCH_NAME}}
-          git checkout ${{env.BRANCH_NAME}}
+          echo "${{ env.BRANCH_NAME }}"
+          rm -r ${{ env.BRANCH_NAME }}
+          
+          git checkout ${{ env.BRANCH_NAME }}
           git branch
         
       - name: remove jekyll theming
