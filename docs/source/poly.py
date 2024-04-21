@@ -11,7 +11,7 @@ from docs.source.builder import DffSphinxBuilder
 # BRANCH_REGEX = r"((?!master).)*"
 # Put all branches here except master, so docs can be built for any branch
 # if the workflow is launched from it.
-# BRANCH_REGEX = r".*"
+BRANCH_REGEX = r".*"
 
 
 #: Regex matching the tags to build docs for
