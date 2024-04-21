@@ -82,7 +82,7 @@ jobs:
         run: |
           ls
           ls ./docs
-          git stash -u
+          git stash --all
           git checkout gh-pages
           pwd
           ls
