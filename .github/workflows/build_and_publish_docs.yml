@@ -62,6 +62,8 @@ jobs:
         
       - name: delete build for this version/branch
         run: |
+          ls
+          ls ./docs
           git checkout gh-pages
           pwd
           ls
