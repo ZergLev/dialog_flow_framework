@@ -1,0 +1,4 @@
+.. automodule:: dff.messengers.telegram.message
+   :members:
+   :undoc-members:
+   :show-inheritance:
