@@ -1,0 +1,21 @@
+dff.messengers.telegram package
+===============================
+
+Submodules
+----------
+
+.. toctree::
+   :maxdepth: 4
+
+   dff.messengers.telegram.interface
+   dff.messengers.telegram.message
+   dff.messengers.telegram.messenger
+   dff.messengers.telegram.utils
+
+Module contents
+---------------
+
+.. automodule:: dff.messengers.telegram
+   :members:
+   :undoc-members:
+   :show-inheritance:

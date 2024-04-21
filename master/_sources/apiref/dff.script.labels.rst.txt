@@ -1,0 +1,18 @@
+dff.script.labels package
+=========================
+
+Submodules
+----------
+
+.. toctree::
+   :maxdepth: 4
+
+   dff.script.labels.std_labels
+
+Module contents
+---------------
+
+.. automodule:: dff.script.labels
+   :members:
+   :undoc-members:
+   :show-inheritance:
