@@ -55,13 +55,15 @@ jobs:
         run: |
           git checkout gh-pages
           pwd
+          ls
+          ls ./docs
           echo "${{ env.BRANCH_NAME }}"
         
       - uses: EndBug/add-and-commit@v9.1.4
         env:
           BRANCH_NAME: ${{ github.head_ref || github.ref_name }}
         with:
-          remove: '-r ./${{ env.BRANCH_NAME }}'
+          remove: '-r --ignore-unmatch ./${{ env.BRANCH_NAME }}'
         
       - name: go back to original branch
         env:
@@ -91,7 +93,7 @@ jobs:
         run: |
           pwd
           ls
-          ls /docs
+          ls ./docs
         
       - name: deploy website
         if: ${{ github.ref == 'refs/heads/master' || github.ref == 'refs/heads/dev' }}
