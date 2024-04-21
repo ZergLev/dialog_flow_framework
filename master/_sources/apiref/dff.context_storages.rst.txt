@@ -1,0 +1,26 @@
+dff.context\_storages package
+=============================
+
+Submodules
+----------
+
+.. toctree::
+   :maxdepth: 4
+
+   dff.context_storages.database
+   dff.context_storages.json
+   dff.context_storages.mongo
+   dff.context_storages.pickle
+   dff.context_storages.protocol
+   dff.context_storages.redis
+   dff.context_storages.shelve
+   dff.context_storages.sql
+   dff.context_storages.ydb
+
+Module contents
+---------------
+
+.. automodule:: dff.context_storages
+   :members:
+   :undoc-members:
+   :show-inheritance:
