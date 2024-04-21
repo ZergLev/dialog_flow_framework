@@ -1,4 +1,0 @@
-.. automodule:: dff.messengers.common.types
-   :members:
-   :undoc-members:
-   :show-inheritance:

@@ -1,4 +1,0 @@
-.. automodule:: dff.script.core.normalization
-   :members:
-   :undoc-members:
-   :show-inheritance:
