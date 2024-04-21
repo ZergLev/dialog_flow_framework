@@ -78,14 +78,12 @@ jobs:
           path: docs/build/
           retention-days: 3
         
-      - uses: EndBug/add-and-commit@v9.1.4
-        with:
-          add: '-f .'
-        
       - name: delete build for this version/branch
         run: |
           ls
           ls ./docs
+          git add -f .
+          git stash
           git checkout gh-pages
           pwd
           ls
@@ -103,6 +101,7 @@ jobs:
           BRANCH_NAME: ${{ github.head_ref || github.ref_name }}
         run: |
           git checkout ${{ env.BRANCH_NAME }}
+          git stash apply
           git branch
         
       - name: check what's going on with directories
