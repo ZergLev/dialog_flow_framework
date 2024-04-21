@@ -85,7 +85,12 @@ jobs:
           name: ${{ format('github-pages-for-branch-{0}', env.BRANCH_NAME) }}
           path: docs/build/
           retention-days: 3
-
+        
+      - name: check what's going on with directories
+        run: |
+          pwd
+          ls
+        
       - name: deploy website
         if: ${{ github.ref == 'refs/heads/master' || github.ref == 'refs/heads/dev' }}
         uses: JamesIves/github-pages-deploy-action@v4
