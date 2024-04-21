@@ -44,13 +44,7 @@ def regenerate_apiref(paths: Optional[List[Tuple[str, str]]] = None, root_dir: s
     :param destination: Apiref root path, default: apiref.
     """
     paths = list() if paths is None else paths
-    source = Path(root_dir) / 'docs' / 'source' / destination
-    print("Currently at regenerate apiref")
-    print(root_dir)
-    print(Path(root_dir))
-    print((Path(root_dir) / 'docs' / 'source'))
-    print((Path(root_dir) / Path('docs/source') / Path(destination)))
-    print("source is: ", source)
+    source = Path(root_dir) / "docs" / "source" / destination
     doc_containers: Dict[str, Tuple[str, List[Path]]] = dict()
 
     for doc_file in iter(source.glob("./*.rst")):

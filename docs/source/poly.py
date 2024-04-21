@@ -1,17 +1,24 @@
 from pathlib import Path
 from datetime import datetime
+from functools import partial
 from sphinx_polyversion import *
 from sphinx_polyversion.git import *
+from sphinx_polyversion.git import closest_tag
 from sphinx_polyversion.pyvenv import Poetry
-# from sphinx_polyversion.sphinx import SphinxBuilder
 from docs.source.builder import DffSphinxBuilder
 
 #: Regex matching the branches to build docs for
-BRANCH_REGEX = r"(dev|master|test_branch|test_branch_2|feat/sphinx_multiversion|sphinx_multiversion_test)"
+# BRANCH_REGEX = r"((?!master).)*"
+# Put all branches here except master, so docs can be built for any branch
+# if the workflow is launched from it.
+BRANCH_REGEX = r".*"
+
 
 #: Regex matching the tags to build docs for
-TAG_REGEX = r"(0\.\d*[7-9]\..*)|(\d*[1-9]\..*)"
-# That was just 0.7+, need to change that to 0.8 on release.
+TAG_REGEX = r"(v0.8.0)"
+# That was just 0.8.0, should change that to auto tags at some point.
+# Could just check always what version is being released, but I'm not sure how to do that yet.
+# For now this means someone has to change this on every single release to whatever the release tag will be. Potentially, if a mistake is made, this can be changed in dev and launched from there, just don't forget to fetch 'master' branch.
 
 #: Output dir relative to project root
 OUTPUT_DIR = "docs/build"
@@ -30,11 +37,8 @@ MOCK_DATA = {
     "revisions": [
         GitRef("dev", "", "", GitRefType.BRANCH, datetime.fromtimestamp(0)),
         GitRef("master", "", "", GitRefType.BRANCH, datetime.fromtimestamp(1)),
-        GitRef("test_branch", "", "", GitRefType.BRANCH, datetime.fromtimestamp(2)),
-        GitRef("test_branch_2", "", "", GitRefType.BRANCH, datetime.fromtimestamp(3)),
-        GitRef("feat/sphinx_multiversion", "", "", GitRefType.BRANCH, datetime.fromtimestamp(4)),
     ],
-    "current": GitRef("local", "", "", GitRefType.BRANCH, datetime.fromtimestamp(5)),
+    "current": GitRef("local", "", "", GitRefType.BRANCH, datetime.fromtimestamp(2)),
 }
 MOCK = False
 
@@ -57,6 +61,7 @@ DefaultDriver(
     ),
     builder=DffSphinxBuilder(src, args=SPHINX_ARGS),
     env=Poetry.factory(args=POETRY_ARGS),
+    selector=partial(closest_tag, root),
     template_dir=root / src / "templates",
     static_dir=root / src / "static",
     mock=MOCK_DATA,
