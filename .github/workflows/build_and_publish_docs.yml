@@ -47,7 +47,10 @@ jobs:
         run: |
           git branch
           python -m poetry run poe docs
-          
+        
+      - name: remove jekyll theming (should probably do this programmatically)
+        run: touch docs/build/.nojekyll
+        
       - name: delete build for this version/branch
         run: |
           git checkout gh-pages
@@ -64,9 +67,6 @@ jobs:
         run: |
           git checkout ${{ env.BRANCH_NAME }}
           git branch
-        
-      - name: remove jekyll theming (should probably do this programmatically)
-        run: touch docs/build/.nojekyll
         
       - name: save branch name without slashes
         if: ${{ github.ref != 'refs/heads/master' }}
