@@ -39,8 +39,6 @@ def setup(root_dir: str, output_dir: str):
         source=(root_dir + "/tutorials"),
         destination=(root_dir + "/docs/source/tutorials"),
     )
-    print(root_dir + "/tutorials")
-    print(root_dir + "/docs/source/tutorials")
     regenerate_apiref(
         [
             ("dff.context_storages", "Context Storages"),
