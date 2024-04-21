@@ -49,21 +49,22 @@ jobs:
           python -m poetry run poe docs
           
       - name: delete build for this version/branch
-        run: |
-          git checkout gh-pages
+        steps:
+        - run: |
+            git checkout gh-pages
         
-      - uses: EndBug/add-and-commit@v9.1.4
-        env:
-          BRANCH_NAME: ${{ github.head_ref || github.ref_name }}
-        with:
-          remove: '-r ./${{ env.BRANCH_NAME }}'
+        - uses: EndBug/add-and-commit@v9.1.4
+          env:
+            BRANCH_NAME: ${{ github.head_ref || github.ref_name }}
+          with:
+            remove: '-r ./${{ env.BRANCH_NAME }}'
         
-      - name: go back to original branch
-        env:
-          BRANCH_NAME: ${{ github.head_ref || github.ref_name }}
-        run: |
-          git checkout ${{ env.BRANCH_NAME }}
-          git branch
+        - name: go back to original branch
+          env:
+            BRANCH_NAME: ${{ github.head_ref || github.ref_name }}
+          run: |
+            git checkout ${{ env.BRANCH_NAME }}
+            git branch
         
       - name: remove jekyll theming (should probably do this programmatically)
         run: touch docs/build/.nojekyll
