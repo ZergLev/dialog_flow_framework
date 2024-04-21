@@ -24,6 +24,24 @@ jobs:
         with:
           fetch-depth: 0  
         
+      - name: delete build for this version/branch
+        run: |
+          git checkout gh-pages
+        
+      - uses: EndBug/add-and-commit@v9.1.4
+        env:
+          BRANCH_NAME: ${{ github.head_ref || github.ref_name }}
+        with:
+          remove: '-r ./${{ env.BRANCH_NAME }}'
+        
+      - name: go back to original branch
+        env:
+          BRANCH_NAME: ${{ github.head_ref || github.ref_name }}
+        run: |
+          echo "${{ env.BRANCH_NAME }}"
+          git checkout ${{ env.BRANCH_NAME }}
+          git branch
+        
       - name: set up python 3.9
         uses: actions/setup-python@v5
         with:
@@ -59,24 +77,6 @@ jobs:
           BRANCH_NAME=${{ env.BRANCH_NAME }}
           BRANCH_NAME=${BRANCH_NAME////_}
           echo BRANCH_NAME=${BRANCH_NAME} >> $GITHUB_ENV
-        
-      - name: delete build for this version/branch
-        run: |
-          git checkout gh-pages
-        
-      - uses: EndBug/add-and-commit@v9.1.4
-        env:
-          BRANCH_NAME: ${{ github.head_ref || github.ref_name }}
-        with:
-          remove: '-r ./${{ env.BRANCH_NAME }}'
-        
-      - name: go back to original branch
-        env:
-          BRANCH_NAME: ${{ github.head_ref || github.ref_name }}
-        run: |
-          echo "${{ env.BRANCH_NAME }}"
-          git checkout ${{ env.BRANCH_NAME }}
-          git branch
         
       - name: save artifact
         if: ${{ github.ref != 'refs/heads/master' }}
