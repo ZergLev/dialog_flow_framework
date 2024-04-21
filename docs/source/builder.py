@@ -101,7 +101,7 @@ class DffSphinxBuilder(CommandBuilder):
         shutil.copyfile(newer_conf_path, older_conf_path)
         
         # Removing Jekyll theming
-        open(source_dir + '/.nojekyll', 'a')
+        open(output_dir + '/.nojekyll', 'a')
         
         # pre hook
         if self.pre_cmd:
