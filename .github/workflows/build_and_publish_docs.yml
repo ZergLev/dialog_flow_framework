@@ -82,6 +82,7 @@ jobs:
         run: |
           ls
           ls ./docs
+          git add .
           git commit -m "saving before checkout"
           git checkout gh-pages
           pwd
