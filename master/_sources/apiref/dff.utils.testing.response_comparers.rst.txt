@@ -1,4 +1,0 @@
-.. automodule:: dff.utils.testing.response_comparers
-   :members:
-   :undoc-members:
-   :show-inheritance:

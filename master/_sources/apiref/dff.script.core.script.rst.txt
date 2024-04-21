@@ -1,4 +1,0 @@
-.. automodule:: dff.script.core.script
-   :members:
-   :undoc-members:
-   :show-inheritance:
