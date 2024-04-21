@@ -82,7 +82,7 @@ jobs:
         run: |
           ls
           ls ./docs
-          git stash --all
+          git commit -m "saving before checkout"
           git checkout gh-pages
           pwd
           ls
