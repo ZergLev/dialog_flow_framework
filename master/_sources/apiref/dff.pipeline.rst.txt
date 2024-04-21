@@ -1,0 +1,28 @@
+dff.pipeline package
+====================
+
+Subpackages
+-----------
+
+.. toctree::
+   :maxdepth: 4
+
+   dff.pipeline.pipeline
+   dff.pipeline.service
+
+Submodules
+----------
+
+.. toctree::
+   :maxdepth: 4
+
+   dff.pipeline.conditions
+   dff.pipeline.types
+
+Module contents
+---------------
+
+.. automodule:: dff.pipeline
+   :members:
+   :undoc-members:
+   :show-inheritance:

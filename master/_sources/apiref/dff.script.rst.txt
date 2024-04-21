@@ -1,0 +1,22 @@
+dff.script package
+==================
+
+Subpackages
+-----------
+
+.. toctree::
+   :maxdepth: 4
+
+   dff.script.conditions
+   dff.script.core
+   dff.script.extras
+   dff.script.labels
+   dff.script.responses
+
+Module contents
+---------------
+
+.. automodule:: dff.script
+   :members:
+   :undoc-members:
+   :show-inheritance:
