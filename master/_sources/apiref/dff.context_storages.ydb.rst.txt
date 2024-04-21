@@ -1,4 +1,0 @@
-.. automodule:: dff.context_storages.ydb
-   :members:
-   :undoc-members:
-   :show-inheritance:
