@@ -1,6 +1,0 @@
-:source_name: dff/context_storages/mongo
-
-.. automodule:: dff.context_storages.mongo
-   :members:
-   :undoc-members:
-   :show-inheritance:
