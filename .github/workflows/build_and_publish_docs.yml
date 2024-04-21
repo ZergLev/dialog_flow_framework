@@ -22,25 +22,7 @@ jobs:
     steps:
       - uses: actions/checkout@v4
         with:
-          fetch-depth: 0  
-        
-      - name: delete build for this version/branch
-        run: |
-          git checkout gh-pages
-        
-      - uses: EndBug/add-and-commit@v9.1.4
-        env:
-          BRANCH_NAME: ${{ github.head_ref || github.ref_name }}
-        with:
-          remove: '-r ./${{ env.BRANCH_NAME }}'
-        
-      - name: go back to original branch
-        env:
-          BRANCH_NAME: ${{ github.head_ref || github.ref_name }}
-        run: |
-          echo "${{ env.BRANCH_NAME }}"
-          git checkout ${{ env.BRANCH_NAME }}
-          git branch
+          fetch-depth: 0
         
       - name: set up python 3.9
         uses: actions/setup-python@v5
@@ -65,8 +47,25 @@ jobs:
         run: |
           git branch
           python -m poetry run poe docs
+          
+      - name: delete build for this version/branch
+        run: |
+          git checkout gh-pages
         
-      - name: remove jekyll theming
+      - uses: EndBug/add-and-commit@v9.1.4
+        env:
+          BRANCH_NAME: ${{ github.head_ref || github.ref_name }}
+        with:
+          remove: '-r ./${{ env.BRANCH_NAME }}'
+        
+      - name: go back to original branch
+        env:
+          BRANCH_NAME: ${{ github.head_ref || github.ref_name }}
+        run: |
+          git checkout ${{ env.BRANCH_NAME }}
+          git branch
+        
+      - name: remove jekyll theming (should probably do this programmatically)
         run: touch docs/build/.nojekyll
         
       - name: save branch name without slashes
