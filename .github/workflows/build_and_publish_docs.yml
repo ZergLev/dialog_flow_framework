@@ -52,7 +52,6 @@ jobs:
           TG_API_HASH: ${{ secrets.TG_API_HASH }}
           TG_BOT_USERNAME: ${{ secrets.TG_BOT_USERNAME }}
         run: |
-          git branch
           python -m poetry run poe docs
         
       - name: remove jekyll theming (should probably do this programmatically)
