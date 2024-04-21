@@ -8,9 +8,6 @@ import pydata_sphinx_theme
 
 sys.path.append(os.path.abspath("."))
 from utils.notebook import py_percent_to_notebook  # noqa: E402
-# from .utils.generate_tutorials import generate_tutorial_links_for_notebook_creation  # noqa: E402
-# from .utils.link_misc_files import link_misc_files  # noqa: E402
-# from .utils.regenerate_apiref import regenerate_apiref  # noqa: E402
 from sphinx_polyversion import load
 from sphinx_polyversion.git import GitRef
 
@@ -18,8 +15,6 @@ from sphinx_polyversion.git import GitRef
 
 data = load(globals())  # adds variables `current` and `revisions`
 current: GitRef = data['current']
-print("current is: ", current)
-print("current[0] is: ", current[0])
 
 _distribution_metadata = importlib.metadata.metadata('dff')
 
@@ -64,8 +59,6 @@ language = "en"
 pygments_style = "default"
 
 add_module_names = False
-
-print(os.getcwd())
 
 # Add any paths that contain templates here, relative to this directory.
 templates_path = ["_templates"]
@@ -120,15 +113,14 @@ html_css_files = [
     "css/custom.css",
 ]
 
-
-json_url = "https://zerglev.github.io/dialog_flow_framework/master/_static/switcher.json"
-# Need to make a better url. Could it be stored in dev? Should it be passed to older versions somehow?
-# It has to be addressed before release.
+# Version switcher url
+switcher_url = "https://zerglev.github.io/dialog_flow_framework/master/_static/switcher.json"
+# Could make a better url. Could it be stored in dev? Should it be passed to older versions somehow? This should be addressed before release.
 
 # Checking for dev before passing version to switcher
 if current[0] == "dev":
     version_data = "dev"
-    version = "0.8.0"
+    # Need to use metadata to show the warning banner for unstable version.
 else:
     version_data = version
 
@@ -161,11 +153,10 @@ html_theme_options = {
     ],
     "secondary_sidebar_items": ["page-toc", "source-links", "example-links"],
     "switcher": {
-        "json_url": json_url,
+        "json_url": switcher_url,
         "version_match" : version_data,
     },
     "navbar_persistent": ["search-button.html", "theme-switcher.html"],
-    # "navbar_align": "left",
     "navbar_end": ["version-switcher.html", "navbar-icon-links.html"],
     "show_version_warning_banner": True,
 }

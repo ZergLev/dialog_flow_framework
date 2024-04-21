@@ -41,9 +41,6 @@ def _build_drawio(root_dir: str):
         volumes=[(drawio_root, "/data", "rw")],
     )
 
-    print(str(drawio_root))
-    print(str(destination))
-
     drawio_root = Path(drawio_root)
     destination = Path(destination)
     destination.mkdir(parents=True, exist_ok=True)
@@ -61,7 +58,6 @@ def docs(docker: Optional[DockerClient]):
         clean_docs()
         dotenv.load_dotenv(".env_file")
         os.environ["DISABLE_INTERACTIVE_MODE"] = "1"
-        # build_drawio should be called in all revisions and I am not sure how yet
         result = build.make_main(["-M", "clean", "docs/source", "docs/build"])
         poly_path = "docs/source/poly.py"
         poly_main([poly_path, poly_path])
@@ -73,8 +69,6 @@ def docs(docker: Optional[DockerClient]):
 
 # Functions to be called from DffSphinxBuilder before build
 def dff_funcs(root_dir: str):
-    drawio_root = root_dir + "/docs/source/drawio_src"
-    drawio_destination = root_dir + "/docs/source/_static/drawio"
     _build_drawio(root_dir)
     apiref_dir = root_dir + "/docs/source/apiref"
     apidoc.main(["-e", "-E", "-f", "-o", apiref_dir, "dff"])
