@@ -48,18 +48,9 @@ jobs:
           git branch
           python -m poetry run poe docs
         
-      - name: remove previous build for this version
-        run: |
-          git checkout gh-pages
-          echo "${{ env.BRANCH_NAME }}"
-          rm -r ${{ env.BRANCH_NAME }}
-          
-          git checkout ${{ env.BRANCH_NAME }}
-          git branch
-        
       - name: remove jekyll theming
         run: touch docs/build/.nojekyll
-
+        
       - name: save branch name without slashes
         if: ${{ github.ref != 'refs/heads/master' }}
         env:
@@ -76,6 +67,20 @@ jobs:
           name: ${{ format('github-pages-for-branch-{0}', env.BRANCH_NAME) }}
           path: docs/build/
           retention-days: 3
+
+      - name: delete build for this version
+        run: |
+          git checkout gh-pages
+        
+      - uses: EndBug/add-and-commit@v9.1.4
+        with:
+          remove: '-n -r ./${{ env.BRANCH_NAME }}'
+        
+      - name: go back to original branch
+        run: |
+          echo "${{ env.BRANCH_NAME }}"
+          git checkout ${{ env.BRANCH_NAME }}
+          git branch
 
       - name: deploy website
         if: ${{ github.ref == 'refs/heads/master' || github.ref == 'refs/heads/dev' }}
