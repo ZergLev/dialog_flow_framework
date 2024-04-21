@@ -54,6 +54,8 @@ jobs:
       - name: delete build for this version/branch
         run: |
           git checkout gh-pages
+          pwd
+          echo "${{ env.BRANCH_NAME }}"
         
       - uses: EndBug/add-and-commit@v9.1.4
         env:
