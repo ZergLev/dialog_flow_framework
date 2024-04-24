@@ -1,0 +1,21 @@
+dff.stats package
+=================
+
+Submodules
+----------
+
+.. toctree::
+   :maxdepth: 4
+
+   dff.stats.cli
+   dff.stats.default_extractors
+   dff.stats.instrumentor
+   dff.stats.utils
+
+Module contents
+---------------
+
+.. automodule:: dff.stats
+   :members:
+   :undoc-members:
+   :show-inheritance:

@@ -1,0 +1,23 @@
+dff.script.core package
+=======================
+
+Submodules
+----------
+
+.. toctree::
+   :maxdepth: 4
+
+   dff.script.core.context
+   dff.script.core.keywords
+   dff.script.core.message
+   dff.script.core.normalization
+   dff.script.core.script
+   dff.script.core.types
+
+Module contents
+---------------
+
+.. automodule:: dff.script.core
+   :members:
+   :undoc-members:
+   :show-inheritance:
