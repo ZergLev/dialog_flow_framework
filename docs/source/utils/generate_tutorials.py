@@ -34,7 +34,6 @@ def create_index_file(
     included: Union[Tuple[str, str], Tuple[str, str, List[Tuple[str, str]]]],
     files: List[Path],
     destination: Path,
-    source_dir: Path = "docs/source",
 ):
     """
     Create a package index file.
@@ -98,7 +97,6 @@ def iterate_tutorials_dir_generating_links(source: Path, dest: Path, base: str) 
         base_name = f"{base}.{entity.name}"
         if entity.is_file() and entity.suffix in (".py", ".ipynb"):
             base_path = Path(base_name)
-            dest_path = f"{base}"
             create_notebook_link(entity, Path(base_name))
             links += [base_path]
         elif entity.is_dir() and not entity.name.startswith("_"):
@@ -111,7 +109,6 @@ def generate_tutorial_links_for_notebook_creation(
     exclude: Optional[List[str]] = None,
     source: str = "tutorials",
     destination: str = "docs/source/tutorials",
-    root_dir: str = ".",
 ):
     """
     Generate symbolic links to tutorials files (tutorials/) in docs directory (docs/source/tutorials/).
@@ -135,7 +132,7 @@ def generate_tutorial_links_for_notebook_creation(
         else:
             flattened += [f"{package[0]}.{subpackage[0]}" for subpackage in package[2]]
 
-    links = iterate_tutorials_dir_generating_links(Path(source), dest, f"{destination}/tutorials")
+    links = iterate_tutorials_dir_generating_links(Path(source), dest, f"{source}/tutorials")
     filtered_links = list()
     for link in links:
         link_included = len(list(flat for flat in flattened if link.name.startswith(flat))) > 0
