@@ -79,11 +79,11 @@ jobs:
         run: |
           git add -f .
           git stash
-          cp docs/source/_static/switcher.json .
+          cp docs/source/_static/switcher.json ./switcher.json
           git add .
           git stash
           git checkout gh-pages
-          rm switcher.json
+          rm -f ./switcher.json
           git pop
         
       - name: delete previous docs build for this branch
