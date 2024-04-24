@@ -1,0 +1,21 @@
+dff.pipeline.pipeline package
+=============================
+
+Submodules
+----------
+
+.. toctree::
+   :maxdepth: 4
+
+   dff.pipeline.pipeline.actor
+   dff.pipeline.pipeline.component
+   dff.pipeline.pipeline.pipeline
+   dff.pipeline.pipeline.utils
+
+Module contents
+---------------
+
+.. automodule:: dff.pipeline.pipeline
+   :members:
+   :undoc-members:
+   :show-inheritance:
