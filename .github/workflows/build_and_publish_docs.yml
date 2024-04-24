@@ -80,8 +80,11 @@ jobs:
           ls
           git add .
           git stash
+          ls
           git checkout gh-pages
+          ls
           rm -f ./switcher.json
+          ls
           git stash pop
           ls
 
