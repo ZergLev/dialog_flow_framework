@@ -77,11 +77,13 @@ jobs:
           git add -f .
           git stash
           cp docs/source/_static/switcher.json ./switcher.json
+          ls
           git add .
           git stash
           git checkout gh-pages
           rm -f ./switcher.json
           git stash pop
+          ls
 
       - name: delete previous docs build for this branch
         uses: EndBug/add-and-commit@v9.1.4
