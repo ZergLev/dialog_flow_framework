@@ -142,5 +142,5 @@ def generate_tutorial_links_for_notebook_creation(
 
     for included in include:
         create_index_file(
-            included, filtered_links, dest / Path(f"index_{included[1].replace(' ', '_').lower()}.rst"), dest
+            included, filtered_links, dest / Path(f"index_{included[1].replace(' ', '_').lower()}.rst")
         )
