@@ -5,6 +5,7 @@ from docs.source.utils.regenerate_apiref import regenerate_apiref  # noqa: E402
 from pathlib import Path
 
 def setup(root_dir: str, output_dir: str):
+"""
     link_misc_files(
         [
             "utils/db_benchmark/benchmark_schema.json",
@@ -51,3 +52,4 @@ def setup(root_dir: str, output_dir: str):
         ],
         root_dir=root_dir,
     )
+    """
