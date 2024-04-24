@@ -1,6 +1,0 @@
-:source_name: dff/utils/turn_caching/singleton_turn_caching
-
-.. automodule:: dff.utils.turn_caching.singleton_turn_caching
-   :members:
-   :undoc-members:
-   :show-inheritance:
