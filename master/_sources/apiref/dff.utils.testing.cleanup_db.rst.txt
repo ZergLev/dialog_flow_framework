@@ -1,4 +1,0 @@
-.. automodule:: dff.utils.testing.cleanup_db
-   :members:
-   :undoc-members:
-   :show-inheritance:
