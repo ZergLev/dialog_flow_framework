@@ -84,6 +84,7 @@ jobs:
           git checkout gh-pages
           ls
           rm -f ./switcher.json
+          git add .
           ls
           git stash pop
           ls
