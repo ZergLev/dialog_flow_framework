@@ -1,4 +1,0 @@
-.. automodule:: dff.messengers.common.interface
-   :members:
-   :undoc-members:
-   :show-inheritance:
