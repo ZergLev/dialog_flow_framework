@@ -67,9 +67,9 @@ jobs:
 
       - name: get built version name
         run: |
-          echo "VERSION=$(ls -1 docs/build | head -n 1)" >> $GITHUB_ENV
+          echo "VERSION=$(ls -1 docs/build | head -n 1)" >> "$GITHUB_ENV"
           ls -1 docs/build | head -n 1
-          echo '${{ env.VERSION }}'
+          echo "${{ env.VERSION }}"
 
       - name: update main switcher.json file
         run: |
