@@ -1,4 +1,0 @@
-.. automodule:: dff.stats.instrumentor
-   :members:
-   :undoc-members:
-   :show-inheritance:
