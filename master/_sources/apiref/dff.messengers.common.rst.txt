@@ -1,0 +1,19 @@
+dff.messengers.common package
+=============================
+
+Submodules
+----------
+
+.. toctree::
+   :maxdepth: 4
+
+   dff.messengers.common.interface
+   dff.messengers.common.types
+
+Module contents
+---------------
+
+.. automodule:: dff.messengers.common
+   :members:
+   :undoc-members:
+   :show-inheritance:
