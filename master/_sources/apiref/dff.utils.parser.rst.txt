@@ -1,0 +1,10 @@
+dff.utils.parser package
+========================
+
+Module contents
+---------------
+
+.. automodule:: dff.utils.parser
+   :members:
+   :undoc-members:
+   :show-inheritance:
