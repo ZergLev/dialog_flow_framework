@@ -1,4 +1,0 @@
-.. automodule:: dff.stats.default_extractors
-   :members:
-   :undoc-members:
-   :show-inheritance:
