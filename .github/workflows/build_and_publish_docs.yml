@@ -72,14 +72,17 @@ jobs:
           path: docs/build/
           retention-days: 3
 
-      - name: update switcher.json
+      - name: get built version name
+        run: |
+          echo "VERSION=$(ls docs/build)" >> $GITHUB_ENV
+          echo "${{ env.VERSION }}"
+
+      - name: update main switcher.json file
         run: |
           cp docs/source/_static/switcher.json ./docs/build/switcher.json
 
       - name: save branch and checkout to gh-pages
         run: |
-          echo "VERSION=$(ls docs/build)" >> $GITHUB_ENV
-          echo "${{ env.VERSION }}"
           git add -f .
           git stash
           git checkout gh-pages
