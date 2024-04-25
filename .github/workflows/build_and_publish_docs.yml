@@ -75,18 +75,9 @@ jobs:
       - name: save branch, checkout to gh-pages and update switcher.json
         run: |
           git add -f .
+          cp docs/source/_static/switcher.json ./docs/build/switcher.json
           git stash
-          cp docs/source/_static/switcher.json ./switcher.json
-          ls
-          git add .
-          git stash
-          ls
           git checkout gh-pages
-          ls
-          rm -f ./switcher.json
-          git add .
-          ls
-          git stash pop
           ls
 
       - name: delete previous docs build for this branch
