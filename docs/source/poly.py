@@ -22,7 +22,6 @@ BRANCH_REGEX = r".*"
 TAG_REGEX = r"-"
 
 # Switch this to True to build docs for current branch locally.
-
 LOCAL = False
 
 repo = git.Repo('./')
