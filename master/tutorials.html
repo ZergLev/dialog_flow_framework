@@ -49,6 +49,7 @@
     <script src="_static/auto-render.min.js?v=8b9f325c"></script>
     <script src="_static/katex_autorenderer.js?v=bebc588a"></script>
     <script crossorigin="anonymous" integrity="sha256-Ae2Vz/4ePdIu6ZyI/5ZGsYnb+m0JlOmKPjt6XZ9JJkA=" src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@jupyter-widgets/html-manager@^1.0.1/dist/embed-amd.js"></script>
     <script>DOCUMENTATION_OPTIONS.pagename = 'tutorials';</script>
     <script>
         DOCUMENTATION_OPTIONS.theme_version = '0.14.4';
@@ -58,7 +59,7 @@
         </script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
-    <link rel="next" title="Examples" href="examples.html" />
+    <link rel="next" title="Context Storages" href="tutorials/index_context_storages.html" />
     <link rel="prev" title="Optimization Guide" href="user_guides/optimization_guide.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
@@ -360,7 +361,7 @@ document.write(`
   <div class="bd-container">
     <div class="bd-container__inner bd-page-width">
       
-      <div class="bd-sidebar-primary bd-sidebar hide-on-wide">
+      <div class="bd-sidebar-primary bd-sidebar">
         
 
   
@@ -518,6 +519,79 @@ document.write(`
     
   </div>
   
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+<nav class="bd-docs-nav bd-links"
+     aria-label="Section Navigation">
+  <p class="bd-links__title" role="heading" aria-level="1">Section Navigation</p>
+  <div class="bd-toc-item navbar-nav"><ul class="nav bd-sidenav">
+<li class="toctree-l1 has-children"><a class="reference internal" href="tutorials/index_context_storages.html">Context Storages</a><input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-1"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="tutorials/tutorials.context_storages.1_basics.html">1. Basics</a></li>
+<li class="toctree-l2"><a class="reference internal" href="tutorials/tutorials.context_storages.2_postgresql.html">2. PostgreSQL</a></li>
+<li class="toctree-l2"><a class="reference internal" href="tutorials/tutorials.context_storages.3_mongodb.html">3. MongoDB</a></li>
+<li class="toctree-l2"><a class="reference internal" href="tutorials/tutorials.context_storages.4_redis.html">4. Redis</a></li>
+<li class="toctree-l2"><a class="reference internal" href="tutorials/tutorials.context_storages.5_mysql.html">5. MySQL</a></li>
+<li class="toctree-l2"><a class="reference internal" href="tutorials/tutorials.context_storages.6_sqlite.html">6. SQLite</a></li>
+<li class="toctree-l2"><a class="reference internal" href="tutorials/tutorials.context_storages.7_yandex_database.html">7. Yandex DataBase</a></li>
+<li class="toctree-l2"><a class="reference internal" href="tutorials/tutorials.context_storages.8_db_benchmarking.html">8. Context storage benchmarking</a></li>
+</ul>
+</li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="tutorials/index_interfaces.html">Interfaces</a><input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-2"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="tutorials/tutorials.messengers.telegram.1_basic.html">Telegram: 1. Basic</a></li>
+<li class="toctree-l2"><a class="reference internal" href="tutorials/tutorials.messengers.telegram.2_buttons.html">Telegram: 2. Buttons</a></li>
+<li class="toctree-l2"><a class="reference internal" href="tutorials/tutorials.messengers.telegram.3_buttons_with_callback.html">Telegram: 3. Buttons with Callback</a></li>
+<li class="toctree-l2"><a class="reference internal" href="tutorials/tutorials.messengers.telegram.4_conditions.html">Telegram: 4. Conditions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="tutorials/tutorials.messengers.telegram.5_conditions_with_media.html">Telegram: 5. Conditions with Media</a></li>
+<li class="toctree-l2"><a class="reference internal" href="tutorials/tutorials.messengers.telegram.6_conditions_extras.html">Telegram: 6. Conditions Extras</a></li>
+<li class="toctree-l2"><a class="reference internal" href="tutorials/tutorials.messengers.telegram.7_polling_setup.html">Telegram: 7. Polling Setup</a></li>
+<li class="toctree-l2"><a class="reference internal" href="tutorials/tutorials.messengers.telegram.8_webhook_setup.html">Telegram: 8. Webhook Setup</a></li>
+<li class="toctree-l2"><a class="reference internal" href="tutorials/tutorials.messengers.web_api_interface.1_fastapi.html">Web API: 1. FastAPI</a></li>
+<li class="toctree-l2"><a class="reference internal" href="tutorials/tutorials.messengers.web_api_interface.2_websocket_chat.html">Web API: 2. WebSocket Chat</a></li>
+<li class="toctree-l2"><a class="reference internal" href="tutorials/tutorials.messengers.web_api_interface.3_load_testing_with_locust.html">Web API: 3. Load testing with Locust</a></li>
+<li class="toctree-l2"><a class="reference internal" href="tutorials/tutorials.messengers.web_api_interface.4_streamlit_chat.html">Web API: 4. Streamlit chat interface</a></li>
+</ul>
+</li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="tutorials/index_pipeline.html">Pipeline</a><input class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-3"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="tutorials/tutorials.pipeline.1_basics.html">1. Basics</a></li>
+<li class="toctree-l2"><a class="reference internal" href="tutorials/tutorials.pipeline.2_pre_and_post_processors.html">2. Pre- and postprocessors</a></li>
+<li class="toctree-l2"><a class="reference internal" href="tutorials/tutorials.pipeline.3_pipeline_dict_with_services_basic.html">3. Pipeline dict with services (basic)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="tutorials/tutorials.pipeline.3_pipeline_dict_with_services_full.html">3. Pipeline dict with services (full)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="tutorials/tutorials.pipeline.4_groups_and_conditions_basic.html">4. Groups and conditions (basic)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="tutorials/tutorials.pipeline.4_groups_and_conditions_full.html">4. Groups and conditions (full)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="tutorials/tutorials.pipeline.5_asynchronous_groups_and_services_basic.html">5. Asynchronous groups and services (basic)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="tutorials/tutorials.pipeline.5_asynchronous_groups_and_services_full.html">5. Asynchronous groups and services (full)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="tutorials/tutorials.pipeline.6_extra_handlers_basic.html">6. Extra Handlers (basic)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="tutorials/tutorials.pipeline.6_extra_handlers_full.html">6. Extra Handlers (full)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="tutorials/tutorials.pipeline.7_extra_handlers_and_extensions.html">7. Extra Handlers and Extensions</a></li>
+</ul>
+</li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="tutorials/index_script.html">Script</a><input class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-4"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="tutorials/tutorials.script.core.1_basics.html">Core: 1. Basics</a></li>
+<li class="toctree-l2"><a class="reference internal" href="tutorials/tutorials.script.core.2_conditions.html">Core: 2. Conditions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="tutorials/tutorials.script.core.3_responses.html">Core: 3. Responses</a></li>
+<li class="toctree-l2"><a class="reference internal" href="tutorials/tutorials.script.core.7_pre_response_processing.html">Core: 7. Pre-response processing</a></li>
+<li class="toctree-l2"><a class="reference internal" href="tutorials/tutorials.script.core.9_pre_transitions_processing.html">Core: 9. Pre-transitions processing</a></li>
+<li class="toctree-l2"><a class="reference internal" href="tutorials/tutorials.script.responses.1_basics.html">Responses: 1. Basics</a></li>
+<li class="toctree-l2"><a class="reference internal" href="tutorials/tutorials.script.responses.2_buttons.html">Responses: 2. Buttons</a></li>
+<li class="toctree-l2"><a class="reference internal" href="tutorials/tutorials.script.responses.3_media.html">Responses: 3. Media</a></li>
+<li class="toctree-l2"><a class="reference internal" href="tutorials/tutorials.script.responses.4_multi_message.html">Responses: 4. Multi Message</a></li>
+</ul>
+</li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="tutorials/index_stats.html">Stats</a><input class="toctree-checkbox" id="toctree-checkbox-5" name="toctree-checkbox-5" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-5"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="tutorials/tutorials.stats.1_extractor_functions.html">1. Extractor Functions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="tutorials/tutorials.stats.2_pipeline_integration.html">2. Pipeline Integration</a></li>
+</ul>
+</li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="tutorials/index_utils.html">Utils</a><input class="toctree-checkbox" id="toctree-checkbox-6" name="toctree-checkbox-6" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-6"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="tutorials/tutorials.utils.1_cache.html">1. Cache</a></li>
+<li class="toctree-l2"><a class="reference internal" href="tutorials/tutorials.utils.2_lru_cache.html">2. LRU Cache</a></li>
+</ul>
+</li>
+</ul>
+</div>
+</nav></div>
+    </div>
+  
   
   <div class="sidebar-primary-items__end sidebar-primary__section">
   </div>
@@ -591,6 +665,114 @@ comprehensive overview of how to build a complete application.</p>
 <div class="line">3) Pipeline / 1. Basics</div>
 </div>
 <div class="toctree-wrapper compound" id="id1">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="tutorials/index_context_storages.html">Context Storages</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="tutorials/tutorials.context_storages.1_basics.html">1. Basics</a></li>
+<li class="toctree-l2"><a class="reference internal" href="tutorials/tutorials.context_storages.2_postgresql.html">2. PostgreSQL</a></li>
+<li class="toctree-l2"><a class="reference internal" href="tutorials/tutorials.context_storages.3_mongodb.html">3. MongoDB</a></li>
+<li class="toctree-l2"><a class="reference internal" href="tutorials/tutorials.context_storages.4_redis.html">4. Redis</a></li>
+<li class="toctree-l2"><a class="reference internal" href="tutorials/tutorials.context_storages.5_mysql.html">5. MySQL</a></li>
+<li class="toctree-l2"><a class="reference internal" href="tutorials/tutorials.context_storages.6_sqlite.html">6. SQLite</a></li>
+<li class="toctree-l2"><a class="reference internal" href="tutorials/tutorials.context_storages.7_yandex_database.html">7. Yandex DataBase</a></li>
+<li class="toctree-l2"><a class="reference internal" href="tutorials/tutorials.context_storages.8_db_benchmarking.html">8. Context storage benchmarking</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="tutorials/tutorials.context_storages.8_db_benchmarking.html#Context-storage-setup">Context storage setup</a></li>
+<li class="toctree-l3"><a class="reference internal" href="tutorials/tutorials.context_storages.8_db_benchmarking.html#Saving-benchmark-results-to-a-file">Saving benchmark results to a file</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="tutorials/tutorials.context_storages.8_db_benchmarking.html#Configuration">Configuration</a></li>
+<li class="toctree-l4"><a class="reference internal" href="tutorials/tutorials.context_storages.8_db_benchmarking.html#File-structure">File structure</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="tutorials/tutorials.context_storages.8_db_benchmarking.html#Viewing-benchmark-results">Viewing benchmark results</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="tutorials/tutorials.context_storages.8_db_benchmarking.html#Using-the-report-function">Using the report function</a></li>
+<li class="toctree-l4"><a class="reference internal" href="tutorials/tutorials.context_storages.8_db_benchmarking.html#Using-Streamlit-app">Using Streamlit app</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="tutorials/tutorials.context_storages.8_db_benchmarking.html#Additional-information">Additional information</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="tutorials/tutorials.context_storages.8_db_benchmarking.html#Configuration-presets">Configuration presets</a></li>
+<li class="toctree-l4"><a class="reference internal" href="tutorials/tutorials.context_storages.8_db_benchmarking.html#Custom-configuration">Custom configuration</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="tutorials/index_interfaces.html">Interfaces</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="tutorials/index_interfaces.html#telegram">Telegram</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="tutorials/tutorials.messengers.telegram.1_basic.html">Telegram: 1. Basic</a></li>
+<li class="toctree-l3"><a class="reference internal" href="tutorials/tutorials.messengers.telegram.2_buttons.html">Telegram: 2. Buttons</a></li>
+<li class="toctree-l3"><a class="reference internal" href="tutorials/tutorials.messengers.telegram.3_buttons_with_callback.html">Telegram: 3. Buttons with Callback</a></li>
+<li class="toctree-l3"><a class="reference internal" href="tutorials/tutorials.messengers.telegram.4_conditions.html">Telegram: 4. Conditions</a></li>
+<li class="toctree-l3"><a class="reference internal" href="tutorials/tutorials.messengers.telegram.5_conditions_with_media.html">Telegram: 5. Conditions with Media</a></li>
+<li class="toctree-l3"><a class="reference internal" href="tutorials/tutorials.messengers.telegram.6_conditions_extras.html">Telegram: 6. Conditions Extras</a></li>
+<li class="toctree-l3"><a class="reference internal" href="tutorials/tutorials.messengers.telegram.7_polling_setup.html">Telegram: 7. Polling Setup</a></li>
+<li class="toctree-l3"><a class="reference internal" href="tutorials/tutorials.messengers.telegram.8_webhook_setup.html">Telegram: 8. Webhook Setup</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="tutorials/index_interfaces.html#web-api">Web API</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="tutorials/tutorials.messengers.web_api_interface.1_fastapi.html">Web API: 1. FastAPI</a></li>
+<li class="toctree-l3"><a class="reference internal" href="tutorials/tutorials.messengers.web_api_interface.2_websocket_chat.html">Web API: 2. WebSocket Chat</a></li>
+<li class="toctree-l3"><a class="reference internal" href="tutorials/tutorials.messengers.web_api_interface.3_load_testing_with_locust.html">Web API: 3. Load testing with Locust</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="tutorials/tutorials.messengers.web_api_interface.3_load_testing_with_locust.html#Running-Locust">Running Locust</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="tutorials/tutorials.messengers.web_api_interface.4_streamlit_chat.html">Web API: 4. Streamlit chat interface</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="tutorials/tutorials.messengers.web_api_interface.4_streamlit_chat.html#Running-Streamlit:">Running Streamlit:</a></li>
+<li class="toctree-l4"><a class="reference internal" href="tutorials/tutorials.messengers.web_api_interface.4_streamlit_chat.html#Module-and-package-import">Module and package import</a></li>
+<li class="toctree-l4"><a class="reference internal" href="tutorials/tutorials.messengers.web_api_interface.4_streamlit_chat.html#API-configuration">API configuration</a></li>
+<li class="toctree-l4"><a class="reference internal" href="tutorials/tutorials.messengers.web_api_interface.4_streamlit_chat.html#Streamlit-configuration">Streamlit configuration</a></li>
+<li class="toctree-l4"><a class="reference internal" href="tutorials/tutorials.messengers.web_api_interface.4_streamlit_chat.html#UI-setup">UI setup</a><ul>
+<li class="toctree-l5"><a class="reference internal" href="tutorials/tutorials.messengers.web_api_interface.4_streamlit_chat.html#Component-patch">Component patch</a></li>
+<li class="toctree-l5"><a class="reference internal" href="tutorials/tutorials.messengers.web_api_interface.4_streamlit_chat.html#Message-display">Message display</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="tutorials/index_pipeline.html">Pipeline</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="tutorials/tutorials.pipeline.1_basics.html">1. Basics</a></li>
+<li class="toctree-l2"><a class="reference internal" href="tutorials/tutorials.pipeline.2_pre_and_post_processors.html">2. Pre- and postprocessors</a></li>
+<li class="toctree-l2"><a class="reference internal" href="tutorials/tutorials.pipeline.3_pipeline_dict_with_services_basic.html">3. Pipeline dict with services (basic)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="tutorials/tutorials.pipeline.3_pipeline_dict_with_services_full.html">3. Pipeline dict with services (full)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="tutorials/tutorials.pipeline.4_groups_and_conditions_basic.html">4. Groups and conditions (basic)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="tutorials/tutorials.pipeline.4_groups_and_conditions_full.html">4. Groups and conditions (full)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="tutorials/tutorials.pipeline.5_asynchronous_groups_and_services_basic.html">5. Asynchronous groups and services (basic)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="tutorials/tutorials.pipeline.5_asynchronous_groups_and_services_full.html">5. Asynchronous groups and services (full)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="tutorials/tutorials.pipeline.6_extra_handlers_basic.html">6. Extra Handlers (basic)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="tutorials/tutorials.pipeline.6_extra_handlers_full.html">6. Extra Handlers (full)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="tutorials/tutorials.pipeline.7_extra_handlers_and_extensions.html">7. Extra Handlers and Extensions</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="tutorials/index_script.html">Script</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="tutorials/index_script.html#core">Core</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="tutorials/tutorials.script.core.1_basics.html">Core: 1. Basics</a></li>
+<li class="toctree-l3"><a class="reference internal" href="tutorials/tutorials.script.core.2_conditions.html">Core: 2. Conditions</a></li>
+<li class="toctree-l3"><a class="reference internal" href="tutorials/tutorials.script.core.3_responses.html">Core: 3. Responses</a></li>
+<li class="toctree-l3"><a class="reference internal" href="tutorials/tutorials.script.core.7_pre_response_processing.html">Core: 7. Pre-response processing</a></li>
+<li class="toctree-l3"><a class="reference internal" href="tutorials/tutorials.script.core.9_pre_transitions_processing.html">Core: 9. Pre-transitions processing</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="tutorials/index_script.html#responses">Responses</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="tutorials/tutorials.script.responses.1_basics.html">Responses: 1. Basics</a></li>
+<li class="toctree-l3"><a class="reference internal" href="tutorials/tutorials.script.responses.2_buttons.html">Responses: 2. Buttons</a></li>
+<li class="toctree-l3"><a class="reference internal" href="tutorials/tutorials.script.responses.3_media.html">Responses: 3. Media</a></li>
+<li class="toctree-l3"><a class="reference internal" href="tutorials/tutorials.script.responses.4_multi_message.html">Responses: 4. Multi Message</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="tutorials/index_stats.html">Stats</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="tutorials/tutorials.stats.1_extractor_functions.html">1. Extractor Functions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="tutorials/tutorials.stats.2_pipeline_integration.html">2. Pipeline Integration</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="tutorials/index_utils.html">Utils</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="tutorials/tutorials.utils.1_cache.html">1. Cache</a></li>
+<li class="toctree-l2"><a class="reference internal" href="tutorials/tutorials.utils.2_lru_cache.html">2. LRU Cache</a></li>
+</ul>
+</li>
+</ul>
 </div>
 </section>
 
@@ -614,11 +796,11 @@ comprehensive overview of how to build a complete application.</p>
       </div>
     </a>
     <a class="right-next"
-       href="examples.html"
+       href="tutorials/index_context_storages.html"
        title="next page">
       <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">Examples</p>
+        <p class="prev-next-title">Context Storages</p>
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>

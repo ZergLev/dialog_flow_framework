@@ -49,6 +49,7 @@
     <script src="_static/auto-render.min.js?v=8b9f325c"></script>
     <script src="_static/katex_autorenderer.js?v=bebc588a"></script>
     <script crossorigin="anonymous" integrity="sha256-Ae2Vz/4ePdIu6ZyI/5ZGsYnb+m0JlOmKPjt6XZ9JJkA=" src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@jupyter-widgets/html-manager@^1.0.1/dist/embed-amd.js"></script>
     <script>DOCUMENTATION_OPTIONS.pagename = 'reference';</script>
     <script>
         DOCUMENTATION_OPTIONS.theme_version = '0.14.4';
@@ -58,7 +59,7 @@
         </script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
-    <link rel="next" title="Development" href="development.html" />
+    <link rel="next" title="Caching" href="apiref/index_caching.html" />
     <link rel="prev" title="Examples" href="examples.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
@@ -360,7 +361,7 @@ document.write(`
   <div class="bd-container">
     <div class="bd-container__inner bd-page-width">
       
-      <div class="bd-sidebar-primary bd-sidebar hide-on-wide">
+      <div class="bd-sidebar-primary bd-sidebar">
         
 
   
@@ -518,6 +519,277 @@ document.write(`
     
   </div>
   
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+<nav class="bd-docs-nav bd-links"
+     aria-label="Section Navigation">
+  <p class="bd-links__title" role="heading" aria-level="1">Section Navigation</p>
+  <div class="bd-toc-item navbar-nav"><ul class="nav bd-sidenav">
+<li class="toctree-l1 has-children"><a class="reference internal" href="apiref/index_caching.html">Caching</a><input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-1"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="apiref/dff.utils.turn_caching.singleton_turn_caching.html">Singleton Turn Caching</a></li>
+
+
+
+
+</ul>
+</li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="apiref/index_context_storages.html">Context Storages</a><input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-2"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="apiref/dff.context_storages.pickle.html">Pickle</a></li>
+
+<li class="toctree-l2"><a class="reference internal" href="apiref/dff.context_storages.protocol.html">Protocol</a></li>
+
+<li class="toctree-l2"><a class="reference internal" href="apiref/dff.context_storages.shelve.html">Shelve</a></li>
+
+<li class="toctree-l2"><a class="reference internal" href="apiref/dff.context_storages.redis.html">Redis</a></li>
+
+<li class="toctree-l2"><a class="reference internal" href="apiref/dff.context_storages.ydb.html">Yandex DB</a></li>
+
+
+
+
+<li class="toctree-l2"><a class="reference internal" href="apiref/dff.context_storages.sql.html">SQL</a></li>
+
+
+<li class="toctree-l2"><a class="reference internal" href="apiref/dff.context_storages.mongo.html">Mongo</a></li>
+
+<li class="toctree-l2"><a class="reference internal" href="apiref/dff.context_storages.json.html">JSON</a></li>
+
+
+<li class="toctree-l2"><a class="reference internal" href="apiref/dff.context_storages.database.html">Database</a></li>
+
+
+
+</ul>
+</li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="apiref/index_db_benchmark.html">DB Benchmark</a><input class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-3"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="apiref/dff.utils.db_benchmark.basic_config.html">Basic Config</a></li>
+
+
+
+
+
+<li class="toctree-l2"><a class="reference internal" href="apiref/dff.utils.db_benchmark.report.html">Report</a></li>
+
+<li class="toctree-l2"><a class="reference internal" href="apiref/dff.utils.db_benchmark.benchmark.html">Context storage benchmarking</a></li>
+
+
+
+
+
+
+</ul>
+</li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="apiref/index_messenger_interfaces.html">Messenger Interfaces</a><input class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-4"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="apiref/dff.messengers.telegram.message.html">Telegram Message</a></li>
+
+
+
+
+
+<li class="toctree-l2"><a class="reference internal" href="apiref/dff.messengers.common.interface.html">Message Interfaces</a></li>
+
+
+
+
+<li class="toctree-l2"><a class="reference internal" href="apiref/dff.messengers.common.types.html">Types</a></li>
+
+<li class="toctree-l2"><a class="reference internal" href="apiref/dff.messengers.telegram.utils.html">Utils</a></li>
+
+
+
+<li class="toctree-l2"><a class="reference internal" href="apiref/dff.messengers.telegram.messenger.html">Messenger</a></li>
+
+
+
+<li class="toctree-l2"><a class="reference internal" href="apiref/dff.messengers.telegram.interface.html">Interface</a></li>
+
+
+
+</ul>
+</li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="apiref/index_pipeline.html">Pipeline</a><input class="toctree-checkbox" id="toctree-checkbox-5" name="toctree-checkbox-5" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-5"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="apiref/dff.pipeline.types.html">Types</a></li>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<li class="toctree-l2"><a class="reference internal" href="apiref/dff.pipeline.service.utils.html">Utility Functions</a></li>
+
+
+
+<li class="toctree-l2"><a class="reference internal" href="apiref/dff.pipeline.service.group.html">Service Group</a></li>
+
+<li class="toctree-l2"><a class="reference internal" href="apiref/dff.pipeline.pipeline.utils.html">Utils</a></li>
+
+
+
+<li class="toctree-l2"><a class="reference internal" href="apiref/dff.pipeline.conditions.html">Conditions</a></li>
+
+
+
+
+
+
+<li class="toctree-l2"><a class="reference internal" href="apiref/dff.pipeline.pipeline.component.html">Component</a></li>
+
+<li class="toctree-l2"><a class="reference internal" href="apiref/dff.pipeline.service.extra.html">Extra Handler</a></li>
+
+
+
+<li class="toctree-l2"><a class="reference internal" href="apiref/dff.pipeline.pipeline.pipeline.html">Pipeline</a></li>
+
+<li class="toctree-l2"><a class="reference internal" href="apiref/dff.pipeline.service.service.html">Service</a></li>
+
+
+<li class="toctree-l2"><a class="reference internal" href="apiref/dff.pipeline.pipeline.actor.html">Actor</a></li>
+
+
+
+</ul>
+</li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="apiref/index_script.html">Script</a><input class="toctree-checkbox" id="toctree-checkbox-6" name="toctree-checkbox-6" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-6"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="apiref/dff.script.extras.conditions.html">dff.script.extras.conditions package</a></li>
+<li class="toctree-l2"><a class="reference internal" href="apiref/dff.script.core.message.html">Message</a></li>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<li class="toctree-l2"><a class="reference internal" href="apiref/dff.script.core.context.html">Context</a></li>
+
+
+<li class="toctree-l2"><a class="reference internal" href="apiref/dff.script.conditions.std_conditions.html">Conditions</a></li>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<li class="toctree-l2"><a class="reference internal" href="apiref/dff.script.labels.std_labels.html">Labels</a></li>
+
+
+
+
+
+
+
+<li class="toctree-l2"><a class="reference internal" href="apiref/dff.script.responses.std_responses.html">Responses</a></li>
+
+<li class="toctree-l2"><a class="reference internal" href="apiref/dff.script.core.script.html">Script</a></li>
+
+
+<li class="toctree-l2"><a class="reference internal" href="apiref/dff.script.core.normalization.html">Normalization</a></li>
+
+
+
+<li class="toctree-l2"><a class="reference internal" href="apiref/dff.script.core.types.html">Types</a></li>
+
+
+
+
+
+
+
+
+
+<li class="toctree-l2"><a class="reference internal" href="apiref/dff.script.extras.slots.html">dff.script.extras.slots package</a></li>
+<li class="toctree-l2"><a class="reference internal" href="apiref/dff.script.core.keywords.html">Keywords</a></li>
+
+</ul>
+</li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="apiref/index_stats.html">Stats</a><input class="toctree-checkbox" id="toctree-checkbox-7" name="toctree-checkbox-7" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-7"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="apiref/dff.stats.default_extractors.html">Default Extractors</a></li>
+
+
+
+
+
+<li class="toctree-l2"><a class="reference internal" href="apiref/dff.stats.instrumentor.html">Instrumentor</a></li>
+
+<li class="toctree-l2"><a class="reference internal" href="apiref/dff.stats.utils.html">Utils</a></li>
+
+
+
+
+
+
+
+
+
+
+<li class="toctree-l2"><a class="reference internal" href="apiref/dff.stats.cli.html">Command Line Interface</a></li>
+
+
+
+
+
+
+
+
+</ul>
+</li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="apiref/index_testing_utils.html">Testing Utils</a><input class="toctree-checkbox" id="toctree-checkbox-8" name="toctree-checkbox-8" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-8"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="apiref/dff.utils.testing.telegram.html">Telegram testing utils</a></li>
+
+
+
+<li class="toctree-l2"><a class="reference internal" href="apiref/dff.utils.testing.toy_script.html">Toy script</a></li>
+
+
+
+
+
+<li class="toctree-l2"><a class="reference internal" href="apiref/dff.utils.testing.response_comparers.html">Response comparer</a></li>
+
+<li class="toctree-l2"><a class="reference internal" href="apiref/dff.utils.testing.cleanup_db.html">Cleanup DB</a></li>
+
+
+
+
+
+
+
+<li class="toctree-l2"><a class="reference internal" href="apiref/dff.utils.testing.common.html">Common</a></li>
+
+
+
+</ul>
+</li>
+</ul>
+</div>
+</nav></div>
+    </div>
+  
   
   <div class="sidebar-primary-items__end sidebar-primary__section">
   </div>
@@ -570,6 +842,16 @@ document.write(`
   <section id="api-reference">
 <h1>API reference<a class="headerlink" href="#api-reference" title="Permalink to this heading">#</a></h1>
 <div class="toctree-wrapper compound" id="reference">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="apiref/index_caching.html">Caching</a></li>
+<li class="toctree-l1"><a class="reference internal" href="apiref/index_context_storages.html">Context Storages</a></li>
+<li class="toctree-l1"><a class="reference internal" href="apiref/index_db_benchmark.html">DB Benchmark</a></li>
+<li class="toctree-l1"><a class="reference internal" href="apiref/index_messenger_interfaces.html">Messenger Interfaces</a></li>
+<li class="toctree-l1"><a class="reference internal" href="apiref/index_pipeline.html">Pipeline</a></li>
+<li class="toctree-l1"><a class="reference internal" href="apiref/index_script.html">Script</a></li>
+<li class="toctree-l1"><a class="reference internal" href="apiref/index_stats.html">Stats</a></li>
+<li class="toctree-l1"><a class="reference internal" href="apiref/index_testing_utils.html">Testing Utils</a></li>
+</ul>
 </div>
 </section>
 
@@ -593,11 +875,11 @@ document.write(`
       </div>
     </a>
     <a class="right-next"
-       href="development.html"
+       href="apiref/index_caching.html"
        title="next page">
       <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">Development</p>
+        <p class="prev-next-title">Caching</p>
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>
