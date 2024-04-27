@@ -1,0 +1,4 @@
+.. automodule:: dff.utils.db_benchmark.benchmark
+   :members:
+   :undoc-members:
+   :show-inheritance:
