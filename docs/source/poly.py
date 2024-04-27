@@ -8,10 +8,10 @@ from sphinx_polyversion.pyvenv import Poetry
 from docs.source.builder import DffSphinxBuilder
 
 #: Regex matching the branches to build docs for
-BRANCH_REGEX = r"((?!master).)*"
+# BRANCH_REGEX = r"((?!master).)*"
 # Put all branches here except master, so docs can be built for any branch
 # if the workflow is launched from it.
-# BRANCH_REGEX = r".*"
+BRANCH_REGEX = r"(master|dev)"
 
 
 #: Regex matching the tags to build docs for
