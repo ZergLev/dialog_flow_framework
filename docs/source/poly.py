@@ -21,7 +21,7 @@ TAG_REGEX = r"-"
 
 LOCAL = False
 
-repo = git.Repo('../../')
+repo = git.Repo('.')
 branch = repo.active_branch
 if LOCAL == True:
     BRANCH_REGEX = str(branch)
