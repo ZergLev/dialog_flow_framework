@@ -28,9 +28,11 @@ LOCAL = False
 repo = git.Repo('.')
 branch = repo.active_branch
 if LOCAL == True:
+# Local builds only build docs for the current branch and no tags, which right now deletes any existing docs for other branches. If you wish to build docs for more branches/tags, you can change it here, or you can also switch off cleaning the /docs/build directory by commenting the "clean_docs()" line in scripts.doc.py
     BRANCH_REGEX = str(branch)
     TAG_REGEX = r"-"
 elif str(branch) == "master":
+# Releases are handled here (pushes into master mean a release, so latest tag is built)
     tags = sorted(repo.tags, key=lambda t: t.commit.committed_datetime)
     latest_tag = tags[-1]
     TAG_REGEX = str(latest_tag)
