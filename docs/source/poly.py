@@ -25,7 +25,7 @@ TAG_REGEX = r"-"
 
 LOCAL = False
 
-repo = git.Repo('.')
+repo = git.Repo('./dialog_flow_framework/')
 branch = repo.active_branch
 if LOCAL == True:
 # Local builds only build docs for the current branch and no tags, which right now deletes any existing docs for other branches. If you wish to build docs for more branches/tags, you can change it here, or you can also switch off cleaning the /docs/build directory by commenting the "clean_docs()" line in scripts.doc.py
