@@ -1,6 +1,0 @@
-:source_name: dff/pipeline/pipeline/component
-
-.. automodule:: dff.pipeline.pipeline.component
-   :members:
-   :undoc-members:
-   :show-inheritance:
