@@ -1,0 +1,18 @@
+dff.script.conditions package
+=============================
+
+Submodules
+----------
+
+.. toctree::
+   :maxdepth: 4
+
+   dff.script.conditions.std_conditions
+
+Module contents
+---------------
+
+.. automodule:: dff.script.conditions
+   :members:
+   :undoc-members:
+   :show-inheritance:
