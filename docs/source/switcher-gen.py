@@ -2,7 +2,7 @@ import git
 import json
 
 def generate_switcher():
-    repo = git.Repo('../')
+    repo = git.Repo('./')
     
     tags = sorted(repo.tags, key=lambda t: t.commit.committed_datetime)
     tags.reverse()
