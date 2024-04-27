@@ -6,7 +6,7 @@ from sphinx_polyversion.git import *
 from sphinx_polyversion.git import closest_tag
 from sphinx_polyversion.pyvenv import Poetry
 from docs.source.builder import DffSphinxBuilder
-from .switcher_gen.py import generate_switcher
+from docs.source.switcher_gen.py import generate_switcher
 import git
 
 #: Regex matching the branches to build docs for
