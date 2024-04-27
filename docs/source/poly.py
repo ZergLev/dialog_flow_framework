@@ -12,7 +12,7 @@ import git
 # BRANCH_REGEX = r"((?!master).)*"
 # Put all branches here except master, so docs can be built for any branch
 # if the workflow is launched from it.
-BRANCH_REGEX = r"(dev)"
+BRANCH_REGEX = r".*"
 
 #: Regex matching the tags to build docs for
 TAG_REGEX = r"-"
@@ -20,7 +20,7 @@ TAG_REGEX = r"-"
 # Switch this to True to build docs for current branch locally.
 
 LOCAL = False
-"""
+
 repo = git.Repo('../../')
 branch = repo.active_branch
 if LOCAL == True:
@@ -30,7 +30,7 @@ elif str(branch) == "master":
     tags = sorted(repo.tags, key=lambda t: t.commit.committed_datetime)
     latest_tag = tags[-1]
     TAG_REGEX = str(latest_tag)
-"""
+
 #: Output dir relative to project root
 OUTPUT_DIR = "docs/build"
 
