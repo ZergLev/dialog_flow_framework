@@ -33,6 +33,6 @@ def generate_switcher():
     switcher_json_obj = json.dumps(switcher_json, indent=4)
     
     # Write nested JSON data to the switcher.json file
-    with open('_static/switcher.json', 'w') as f:
+    with open('./docs/source/_static/switcher.json', 'w') as f:
         f.write(switcher_json_obj)
 
