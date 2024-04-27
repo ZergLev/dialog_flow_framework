@@ -8,7 +8,6 @@ from logging import getLogger
 from pathlib import Path, PurePath
 from subprocess import CalledProcessError
 from typing import TYPE_CHECKING, Any, Iterable
-import sphinx.cmd.build as sphinx
 
 from sphinx_polyversion.builder import Builder, BuildError
 from sphinx_polyversion.environment import Environment
@@ -91,8 +90,10 @@ class DffSphinxBuilder(CommandBuilder):
         sys.modules["setup"] = setup_module
         spec.loader.exec_module(setup_module)
         
+        """
         # Cleaning outdated documentation build
         sphinx.make_main(["-M", "clean", str(source_dir), str(output_dir)])
+        """
         
         # doing DFF funcs before doc building
         scripts.doc.dff_funcs(str(root_dir))
