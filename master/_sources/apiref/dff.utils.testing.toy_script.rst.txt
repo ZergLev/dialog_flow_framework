@@ -1,4 +1,0 @@
-.. automodule:: dff.utils.testing.toy_script
-   :members:
-   :undoc-members:
-   :show-inheritance:
