@@ -6,19 +6,31 @@ from sphinx_polyversion.git import *
 from sphinx_polyversion.git import closest_tag
 from sphinx_polyversion.pyvenv import Poetry
 from docs.source.builder import DffSphinxBuilder
+import git
 
 #: Regex matching the branches to build docs for
-# BRANCH_REGEX = r"((?!master).)*"
+BRANCH_REGEX = r"((?!master).)*"
 # Put all branches here except master, so docs can be built for any branch
 # if the workflow is launched from it.
-BRANCH_REGEX = r"(dev)"
-
+# BRANCH_REGEX = r"(dev)"
 
 #: Regex matching the tags to build docs for
-TAG_REGEX = r"(v0.8.0)"
-# That was just 0.8.0, should change that to auto tags at some point.
-# Could just check always what version is being released, but I'm not sure how to do that yet.
-# For now this means someone has to change this on every single release to whatever the release tag will be. Potentially, if a mistake is made, this can be changed in dev and launched from there, just don't forget to fetch 'master' branch.
+TAG_REGEX = r"-"
+
+# Switch this to True to build docs for current branch locally.
+
+LOCAL = False
+"""
+repo = git.Repo('../../')
+branch = repo.active_branch
+if LOCAL == True:
+    BRANCH_REGEX = str(branch)
+    TAG_REGEX = r"-"
+elif str(branch) == "master":
+    tags = sorted(repo.tags, key=lambda t: t.commit.committed_datetime)
+    latest_tag = tags[-1]
+    TAG_REGEX = str(latest_tag)
+"""
 
 #: Output dir relative to project root
 OUTPUT_DIR = "docs/build"
