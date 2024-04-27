@@ -115,7 +115,6 @@ html_css_files = [
 
 # Version switcher url
 switcher_url = "https://zerglev.github.io/dialog_flow_framework/switcher.json"
-# To-do: a separate switcher.json for dev and other branches
 
 # Checking for dev before passing version to switcher
 if current[0] == "dev":
