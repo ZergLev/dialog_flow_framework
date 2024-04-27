@@ -20,7 +20,7 @@ def generate_switcher():
     master_data = {
         "name": "master",
         "version": "v0.7.0",
-        "url": "https://zerglev.github.io/dialog_flow_framework/dev/index.html",
+        "url": "https://zerglev.github.io/dialog_flow_framework/master/index.html",
         "preferred": "true",
     }
     switcher_json += [master_data]
