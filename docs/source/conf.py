@@ -114,7 +114,7 @@ html_css_files = [
 ]
 
 # Version switcher url
-switcher_url = "https://zerglev.github.io/dialog_flow_framework/master/_static/switcher.json"
+switcher_url = "https://zerglev.github.io/dialog_flow_framework/switcher.json"
 # Could make a better url. Could it be stored in dev? Should it be passed to older versions somehow? This should be addressed before release.
 
 # Checking for dev before passing version to switcher
