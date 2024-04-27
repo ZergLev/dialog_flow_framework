@@ -36,5 +36,3 @@ def generate_switcher():
     with open('_static/switcher.json', 'w') as f:
         f.write(switcher_json_obj)
 
-generate_switcher()
-
