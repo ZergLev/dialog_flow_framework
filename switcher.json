@@ -1,12 +1,12 @@
 [
     {
-        "name": "master(stable)",
-        "version": "0.7.0",
-        "url": "https://zerglev.github.io/dialog_flow_framework/master/index.html",
-        "preferred": "true"
+        "version": "dev",
+        "url": "https://deepavlov.github.io/dialog_flow_framework/dev/index.html"
     },
     {
-        "version": "dev",
-        "url": "https://zerglev.github.io/dialog_flow_framework/dev/index.html"
+        "name": "v0.7.0",
+        "version": "v0.7.0",
+        "url": "https://deepavlov.github.io/dialog_flow_framework/v0.7.0/index.html",
+        "preferred": "true"
     }
 ]
