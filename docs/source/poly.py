@@ -58,7 +58,7 @@ MOCK_DATA = {
     ],
     "current": GitRef("local", "", "", GitRefType.BRANCH, datetime.fromtimestamp(2)),
 }
-MOCK = True
+MOCK = False
 
 # Load overrides read from commandline to global scope
 apply_overrides(globals())
