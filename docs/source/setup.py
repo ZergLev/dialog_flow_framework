@@ -12,6 +12,7 @@ def setup(root_dir: str, output_dir: str):
         ],
         root_dir=Path(root_dir),
     )
+    """
     generate_tutorial_links_for_notebook_creation(
         [
             ("tutorials.context_storages", "Context Storages"),
@@ -51,4 +52,4 @@ def setup(root_dir: str, output_dir: str):
         ],
         root_dir=root_dir,
     )
-
+"""
