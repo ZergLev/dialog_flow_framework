@@ -98,10 +98,12 @@ class DffSphinxBuilder(CommandBuilder):
         setup_module.setup(str(root_dir), str(output_dir))
 
         # Replacing old conf.py file with the newest one
-        # This shouldn't be there in builders for older versions.
+        # This feature is turned off, but in case anyone needs it to build old versions with a newer design, just uncomment this and configure poly.py correctly
+        """
         newer_conf_path = (os.getcwd() + "/docs/source/conf.py")
         older_conf_path = str(source_dir) + "/conf.py"
         shutil.copyfile(newer_conf_path, older_conf_path)
+        """
 
         # pre hook
         if self.pre_cmd:
