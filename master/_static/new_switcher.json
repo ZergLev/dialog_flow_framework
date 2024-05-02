@@ -1,0 +1,12 @@
+[
+    {
+        "version": "dev",
+        "url": "https://deepavlov.github.io/dialog_flow_framework/dev/index.html"
+    },
+    {
+        "name": "v0.7.0",
+        "version": "v0.7.0",
+        "url": "https://deepavlov.github.io/dialog_flow_framework/v0.7.0/index.html",
+        "preferred": "true"
+    }
+]
