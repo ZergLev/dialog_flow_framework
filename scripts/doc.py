@@ -66,7 +66,6 @@ def docs(docker: Optional[DockerClient]):
 
 # Functions to be called from DffSphinxBuilder before build
 def dff_funcs(root_dir: str):
-    clean_docs(root_dir)
     _build_drawio(root_dir)
     apiref_dir = root_dir + "/docs/source/apiref"
     apidoc.main(["-e", "-E", "-f", "-o", apiref_dir, "dff"])
