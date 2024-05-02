@@ -2,7 +2,7 @@ from pathlib import Path
 import shutil
 
 # This functions cleans the outdated docs during local build
-def clean_docs(output_dir: str):
+def clean_docs(output_dir: str = ""):
     shutil.rmtree("docs/build/" + output_dir, ignore_errors=True)
     shutil.rmtree("docs/tutorials", ignore_errors=True)
     shutil.rmtree("docs/source/apiref", ignore_errors=True)

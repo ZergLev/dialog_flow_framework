@@ -91,7 +91,7 @@ class DffSphinxBuilder(CommandBuilder):
         spec.loader.exec_module(setup_module)
 
         # Cleaning outdated documentation build
-        clean_docs(output_dir)
+        clean_docs(str(output_dir))
 
         # doing DFF funcs before doc building
         scripts.doc.dff_funcs(str(root_dir))
