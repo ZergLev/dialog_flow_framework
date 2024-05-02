@@ -11,7 +11,6 @@ from colorama import init, Fore, Style
 from python_on_whales import DockerClient
 
 from .utils import docker_client
-from .clean import clean_docs
 
 from sphinx_polyversion.main import main as poly_main
 
@@ -55,7 +54,6 @@ def _build_drawio(root_dir: str):
 def docs(docker: Optional[DockerClient]):
     init()
     if docker is not None:
-        clean_docs()
         dotenv.load_dotenv(".env_file")
         os.environ["DISABLE_INTERACTIVE_MODE"] = "1"
         poly_path = "docs/source/poly.py"
@@ -68,6 +66,7 @@ def docs(docker: Optional[DockerClient]):
 
 # Functions to be called from DffSphinxBuilder before build
 def dff_funcs(root_dir: str):
+    clean_docs(root_dir)
     _build_drawio(root_dir)
     apiref_dir = root_dir + "/docs/source/apiref"
     apidoc.main(["-e", "-E", "-f", "-o", apiref_dir, "dff"])
